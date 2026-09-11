@@ -20,6 +20,21 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="stylesheet" href="/css/style.css">
 <style>.nav a.is-active{color:var(--gold-light) !important}</style>
+<style>
+/* ===== FAQ ===== */
+.faq { background: var(--surface-soft); padding: 72px 0 80px; border-top: 1px solid var(--surface-line); }
+.faq .section-eyebrow { margin-bottom: 12px; }
+.faq h2 { font-size: clamp(28px, 2.8vw, 40px); color: var(--ink); margin-bottom: 8px; }
+.faq-grid { display: grid; gap: 12px; margin-top: 28px; max-width: 760px; }
+.faq details { background: var(--surface); border: 1px solid var(--surface-line); border-radius: 14px; overflow: hidden; transition: border-color .3s, box-shadow .3s; }
+.faq details[open] { border-color: var(--surface-line); box-shadow: 0 8px 24px rgba(13,22,19,.06); }
+.faq summary { list-style: none; padding: 18px 20px; font-size: 16px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; user-select: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; border: 1px solid var(--surface-line); color: var(--gold); font-weight: 400; font-size: 18px; line-height: 1; transition: transform .3s, background .3s, border-color .3s; }
+.faq details[open] summary::after { content: "−"; background: var(--surface-soft); border-color: var(--surface-line); }
+.faq details p { padding: 0 20px 18px; margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--text-soft); border-top: 1px solid var(--surface-line); padding-top: 14px; }
+@media(max-width:640px){ .faq { padding: 48px 0 56px; } .faq summary { font-size: 15px; padding: 16px 16px; } .faq details p { padding: 0 16px 16px; padding-top: 12px; } }
+</style>
 </head>
 <body>
 
@@ -81,6 +96,23 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container" data-reveal>
+    <p class="section-eyebrow">FAQ</p>
+    <h2>Частые вопросы</h2>
+    <div class="faq-grid">
+      <details data-reveal><summary>Сколько стоит клининг в Астане?</summary><p>Клининг в Астане в Pureline стоит от 1000 ₸ за м² - честная цена без скрытых доплат. Итоговая стоимость зависит от площади, типа уборки и дополнительных услуг вроде химчистки или мойки окон. Для точного расчета напишите нам в WhatsApp - назовем цену за минуту.</p></details>
+      <details data-reveal><summary>Что входит в генеральную уборку квартиры в Астане?</summary><p>Генеральная уборка квартиры в Астане от Pureline включает обеспыливание всех поверхностей, мойку окон изнутри, чистку санузлов и кухни с бытовой техникой, уход за полами и бережную обработку мрамора и паркета. Работаем по чек-листу на 80+ пунктов, используем сертифицированную экохимию и технику Karcher. По запросу добавляем химчистку, стирку штор и глажку до 20 вещей.</p></details>
+      <details data-reveal><summary>Делаете ли химчистку дивана на дому в Астане?</summary><p>Да, делаем выездную химчистку диванов, матрасов и ковров на дому в Астане с экстракторным оборудованием. Используем безопасную гипоаллергенную химию, которая удаляет застарелые пятна и запахи и подходит для детских комнат и домов с питомцами. Мебель высыхает за 4-6 часов и готова к использованию в тот же день.</p></details>
+      <details data-reveal><summary>Моете ли панорамные окна без разводов?</summary><p>Да, профессионально моем панорамные окна, витражи и фасадное остекление в квартирах и домах Астаны без разводов. Работаем на высоких этажах жилых комплексов с безопасным оборудованием и средствами для стекла. Также очищаем рамы, откосы и защитную строительную ленту после ремонта.</p></details>
+      <details data-reveal><summary>Чем премиум клининг отличается от обычной уборки?</summary><p>Премиум клининг - это чек-лист на 60-110 пунктов, сертифицированная экохимия без хлора, HEPA-оборудование и бригадир на объекте для контроля качества. В отличие от обычной уборки, мы даем гарантию 24 часа и договор с сохранностью имущества. Вы платите за предсказуемый результат как в отеле 5 звезд, а не за импровизацию.</p></details>
+      <details data-reveal><summary>В каких ЖК Астаны работаете?</summary><p>Работаем по всей Астане, включая левый берег и элитные комплексы Highvill, BI Village, Караоткель и другие ЖК. Также убираем коттеджи, таунхаусы и частные дома в Есильском районе и пригороде. Выезжаем со своим оборудованием и средствами в день обращения.</p></details>
+      <details data-reveal><summary>Как заказать уборку на сегодня?</summary><p>Чтобы заказать уборку на сегодня в Астане, напишите на WhatsApp 8 700 085 32 33 или позвоните - отвечаем ежедневно с 08:00 до 21:00. Подберем время, уточним площадь и тип уборки, бригада приедет в удобный слот даже в день обращения. Возможна оплата через Kaspi и по безналу с договором для юрлиц.</p></details>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-inner">
@@ -110,5 +142,70 @@
 </footer>
 
 <script src="/js/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько стоит клининг в Астане?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Клининг в Астане в Pureline стоит от 1000 ₸ за м² - честная цена без скрытых доплат. Итоговая стоимость зависит от площади, типа уборки и дополнительных услуг вроде химчистки или мойки окон. Для точного расчета напишите нам в WhatsApp - назовем цену за минуту."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что входит в генеральную уборку квартиры в Астане?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Генеральная уборка квартиры в Астане от Pureline включает обеспыливание всех поверхностей, мойку окон изнутри, чистку санузлов и кухни с бытовой техникой, уход за полами и бережную обработку мрамора и паркета. Работаем по чек-листу на 80+ пунктов, используем сертифицированную экохимию и технику Karcher. По запросу добавляем химчистку, стирку штор и глажку до 20 вещей."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Делаете ли химчистку дивана на дому в Астане?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, делаем выездную химчистку диванов, матрасов и ковров на дому в Астане с экстракторным оборудованием. Используем безопасную гипоаллергенную химию, которая удаляет застарелые пятна и запахи и подходит для детских комнат и домов с питомцами. Мебель высыхает за 4-6 часов и готова к использованию в тот же день."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Моете ли панорамные окна без разводов?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, профессионально моем панорамные окна, витражи и фасадное остекление в квартирах и домах Астаны без разводов. Работаем на высоких этажах жилых комплексов с безопасным оборудованием и средствами для стекла. Также очищаем рамы, откосы и защитную строительную ленту после ремонта."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем премиум клининг отличается от обычной уборки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Премиум клининг - это чек-лист на 60-110 пунктов, сертифицированная экохимия без хлора, HEPA-оборудование и бригадир на объекте для контроля качества. В отличие от обычной уборки, мы даем гарантию 24 часа и договор с сохранностью имущества. Вы платите за предсказуемый результат как в отеле 5 звезд, а не за импровизацию."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "В каких ЖК Астаны работаете?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Работаем по всей Астане, включая левый берег и элитные комплексы Highvill, BI Village, Караоткель и другие ЖК. Также убираем коттеджи, таунхаусы и частные дома в Есильском районе и пригороде. Выезжаем со своим оборудованием и средствами в день обращения."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как заказать уборку на сегодня?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Чтобы заказать уборку на сегодня в Астане, напишите на WhatsApp 8 700 085 32 33 или позвоните - отвечаем ежедневно с 08:00 до 21:00. Подберем время, уточним площадь и тип уборки, бригада приедет в удобный слот даже в день обращения. Возможна оплата через Kaspi и по безналу с договором для юрлиц."
+      }
+    }
+  ]
+}
+</script>
+
 </body>
 </html>
