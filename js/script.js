@@ -21,6 +21,23 @@ if (burger && nav) {
   nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("is-open")));
 }
 
+// ===== Reveal on scroll =====
+const revealEls = document.querySelectorAll("[data-reveal]");
+if (revealEls.length && typeof IntersectionObserver !== "undefined") {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+} else {
+  // Fallback: if no observer, show all immediately
+  revealEls.forEach(el => el.classList.add("is-visible"));
+}
+
 // ===== Time slots =====
 const timeInput = document.getElementById("time");
 const selectedDatetimeEl = document.getElementById("selected-datetime");
