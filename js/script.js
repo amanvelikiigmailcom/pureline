@@ -2,43 +2,39 @@
 // Вставьте сюда URL вашего развёрнутого Google Apps Script Web App (см. apps-script/Code.gs и SETUP.md)
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6WtQhOt5k2CYBMQ-fJh1fQ22NJOqfTnSRS3_MTqm5zSDIXeUPzL8eArxVSSn7TgvK3g/exec";
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ===== Header scroll state =====
 const header = document.getElementById("header");
-window.addEventListener("scroll", () => {
-  header.classList.toggle("is-scrolled", window.scrollY > 40);
-});
+if (header) {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 40);
+  });
+}
 
 // ===== Mobile nav =====
 const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
-burger.addEventListener("click", () => nav.classList.toggle("is-open"));
-nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("is-open")));
-
-// ===== Reveal on scroll =====
-const revealEls = document.querySelectorAll("[data-reveal]");
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-revealEls.forEach(el => revealObserver.observe(el));
+if (burger && nav) {
+  burger.addEventListener("click", () => nav.classList.toggle("is-open"));
+  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("is-open")));
+}
 
 // ===== Time slots =====
 const timeInput = document.getElementById("time");
 const selectedDatetimeEl = document.getElementById("selected-datetime");
-document.querySelectorAll("#time-grid .time-slot").forEach(slot => {
-  slot.addEventListener("click", () => {
-    document.querySelectorAll("#time-grid .time-slot").forEach(s => s.classList.remove("is-active"));
-    slot.classList.add("is-active");
-    timeInput.value = slot.dataset.value;
-    updateSelectedDatetime();
+const timeGrid = document.getElementById("time-grid");
+if (timeGrid) {
+  timeGrid.querySelectorAll(".time-slot").forEach(slot => {
+    slot.addEventListener("click", () => {
+      timeGrid.querySelectorAll(".time-slot").forEach(s => s.classList.remove("is-active"));
+      slot.classList.add("is-active");
+      if (timeInput) timeInput.value = slot.dataset.value;
+      updateSelectedDatetime();
+    });
   });
-});
+}
 
 // ===== Calendar =====
 const MONTHS_RU = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
@@ -53,6 +49,7 @@ let viewMonth = today.getMonth();
 let selectedDate = null;
 
 function renderCalendar() {
+  if (!calDays || !calMonthLabel) return;
   calMonthLabel.textContent = `${MONTHS_RU[viewMonth]} ${viewYear}`;
   calDays.innerHTML = "";
 
@@ -82,7 +79,7 @@ function renderCalendar() {
 
     btn.addEventListener("click", () => {
       selectedDate = cellDate;
-      dateInput.value = formatDateISO(cellDate);
+      if (dateInput) dateInput.value = formatDateISO(cellDate);
       renderCalendar();
       updateSelectedDatetime();
     });
@@ -103,7 +100,8 @@ function formatDateRU(d) {
 }
 
 function updateSelectedDatetime() {
-  if (selectedDate && timeInput.value) {
+  if (!selectedDatetimeEl) return;
+  if (selectedDate && timeInput && timeInput.value) {
     selectedDatetimeEl.textContent = `${formatDateRU(selectedDate)} в ${timeInput.value}`;
   } else if (selectedDate) {
     selectedDatetimeEl.textContent = `${formatDateRU(selectedDate)} — выберите время`;
@@ -112,18 +110,20 @@ function updateSelectedDatetime() {
   }
 }
 
-document.getElementById("cal-prev").addEventListener("click", () => {
+const calPrev = document.getElementById("cal-prev");
+if (calPrev) calPrev.addEventListener("click", () => {
   viewMonth--;
   if (viewMonth < 0) { viewMonth = 11; viewYear--; }
   renderCalendar();
 });
-document.getElementById("cal-next").addEventListener("click", () => {
+const calNext = document.getElementById("cal-next");
+if (calNext) calNext.addEventListener("click", () => {
   viewMonth++;
   if (viewMonth > 11) { viewMonth = 0; viewYear++; }
   renderCalendar();
 });
 
-renderCalendar();
+if (calDays && calMonthLabel) renderCalendar();
 
 // ===== Phone normalization =====
 function normalizePhone(phone) {
@@ -137,34 +137,46 @@ const statusEl = document.getElementById("form-status");
 const submitBtn = document.getElementById("submit-btn");
 
 function showStatus(type, message) {
+  if (!statusEl) return;
   statusEl.hidden = false;
   statusEl.className = `form-status ${type}`;
   statusEl.textContent = message;
 }
 
-form.addEventListener("submit", async (e) => {
+if (form) form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  statusEl.hidden = true;
+  if (statusEl) statusEl.hidden = true;
 
-  if (!dateInput.value || !timeInput.value) {
+  const dateVal = dateInput ? dateInput.value : "";
+  const timeVal = timeInput ? timeInput.value : "";
+  if (!dateVal || !timeVal) {
     showStatus("error", "Пожалуйста, выберите дату и время в календаре.");
     return;
   }
 
+  const nameEl = document.getElementById("name");
+  const phoneEl = document.getElementById("phone");
+  const addressEl = document.getElementById("address");
+  const areaEl = document.getElementById("area");
+  const commentEl = document.getElementById("comment");
+
   const payload = {
-    date: dateInput.value,
-    time: timeInput.value,
-    name: document.getElementById("name").value.trim(),
-    phone: normalizePhone(document.getElementById("phone").value),
-    address: document.getElementById("address").value.trim(),
-    area: document.getElementById("area").value.trim(),
-    comment: document.getElementById("comment").value.trim(),
+    date: dateInput ? dateInput.value : "",
+    time: timeInput ? timeInput.value : "",
+    name: nameEl ? nameEl.value.trim() : "",
+    phone: phoneEl ? normalizePhone(phoneEl.value) : "",
+    address: addressEl ? addressEl.value.trim() : "",
+    area: areaEl ? areaEl.value.trim() : "",
+    comment: commentEl ? commentEl.value.trim() : "",
     submittedAt: new Date().toISOString(),
     source: "pureline-website"
   };
 
-  submitBtn.disabled = true;
-  submitBtn.querySelector(".btn-text").textContent = "Отправляем…";
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    const btnText = submitBtn.querySelector(".btn-text");
+    if (btnText) btnText.textContent = "Отправляем…";
+  }
 
   try {
     if (!APPS_SCRIPT_URL.includes("ВАШ_ID_РАЗВЁРТЫВАНИЯ")) {
@@ -182,7 +194,8 @@ form.addEventListener("submit", async (e) => {
 
     showStatus("success", "Заявка отправлена! Мы свяжемся с вами в течение 30 минут.");
     form.reset();
-    document.querySelectorAll("#time-grid .time-slot").forEach(s => s.classList.remove("is-active"));
+    const timeGridEl = document.getElementById("time-grid");
+    if (timeGridEl) timeGridEl.querySelectorAll(".time-slot").forEach(s => s.classList.remove("is-active"));
     selectedDate = null;
     renderCalendar();
     updateSelectedDatetime();
@@ -190,7 +203,10 @@ form.addEventListener("submit", async (e) => {
     console.error(err);
     showStatus("error", "Не удалось отправить заявку. Позвоните нам напрямую по телефону.");
   } finally {
-    submitBtn.disabled = false;
-    submitBtn.querySelector(".btn-text").textContent = "Отправить заявку";
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      const btnText = submitBtn.querySelector(".btn-text");
+      if (btnText) btnText.textContent = "Отправить заявку";
+    }
   }
 });
