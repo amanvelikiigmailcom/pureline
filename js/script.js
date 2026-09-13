@@ -3,9 +3,7 @@
 // Используется формой заявки на главной (#booking) — единственной формой на сайте.
 // Endpoint может быть любым (Apps Script, serverless-функция) — именно он пересылает
 // заявку в мессенджер. НИКОГДА не вставляйте сюда токен Telegram-бота: это публичный код.
-// Прежний рабочий URL, если понадобится вернуть:
-// https://script.google.com/macros/s/AKfycbz6WtQhOt5k2CYBMQ-fJh1fQ22NJOqfTnSRS3_MTqm5zSDIXeUPzL8eArxVSSn7TgvK3g/exec
-const APPS_SCRIPT_URL = "___ВСТАВИТЬ_URL___";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6WtQhOt5k2CYBMQ-fJh1fQ22NJOqfTnSRS3_MTqm5zSDIXeUPzL8eArxVSSn7TgvK3g/exec";
 
 function isAppsScriptConfigured() {
   return APPS_SCRIPT_URL.startsWith("http");
