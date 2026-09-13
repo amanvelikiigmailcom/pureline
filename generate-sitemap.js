@@ -13,9 +13,10 @@ const root = __dirname;
 function metaFor(urlPath) {
   if (urlPath === '/') return { priority: '1.0', changefreq: 'weekly' };
   if (urlPath === '/prices/') return { priority: '0.9', changefreq: 'monthly' };
+  if (urlPath === '/en/') return { priority: '0.9', changefreq: 'monthly' };
+  if (urlPath === '/en/prices/') return { priority: '0.8', changefreq: 'monthly' };
   if (urlPath === '/portfolio/' || urlPath === '/blog/') return { priority: '0.8', changefreq: urlPath === '/blog/' ? 'weekly' : 'monthly' };
   if (urlPath.startsWith('/blog/')) return { priority: '0.7', changefreq: 'monthly' };
-  if (urlPath === '/cleaning/') return { priority: '0.7', changefreq: 'monthly' };
   if (urlPath === '/career/') return { priority: '0.6', changefreq: 'monthly' };
   if (urlPath === '/ads/') return { priority: '0.5', changefreq: 'monthly' };
   // fallback: depth-based

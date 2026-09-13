@@ -14,6 +14,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PURELINE - премиальный клининг</title>
 <meta name="description" content="Клининговая компания премиум-класса. Генеральная и поддерживающая уборка, уборка после ремонта, химчистка. Онлайн-запись на удобное время.">
+<link rel="alternate" hreflang="ru" href="https://pureline.kz/">
+<link rel="alternate" hreflang="en" href="https://pureline.kz/en/">
+<link rel="alternate" hreflang="x-default" href="https://pureline.kz/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,19 +24,21 @@
 <link rel="stylesheet" href="/css/style.css">
 <style>.nav a.is-active{color:var(--gold-light) !important}</style>
 <style>
-/* ===== FAQ ===== */
-.faq { background: var(--surface-soft); padding: 72px 0 80px; border-top: 1px solid var(--surface-line); }
-.faq .section-eyebrow { margin-bottom: 12px; }
-.faq h2 { font-size: clamp(28px, 2.8vw, 40px); color: var(--ink); margin-bottom: 8px; }
-.faq-grid { display: grid; gap: 12px; margin-top: 28px; max-width: 760px; }
-.faq details { background: var(--surface); border: 1px solid var(--surface-line); border-radius: 14px; overflow: hidden; transition: border-color .3s, box-shadow .3s; }
-.faq details[open] { border-color: var(--surface-line); box-shadow: 0 8px 24px rgba(13,22,19,.06); }
-.faq summary { list-style: none; padding: 18px 20px; font-size: 16px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; user-select: none; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; border: 1px solid var(--surface-line); color: var(--gold); font-weight: 400; font-size: 18px; line-height: 1; transition: transform .3s, background .3s, border-color .3s; }
-.faq details[open] summary::after { content: "−"; background: var(--surface-soft); border-color: var(--surface-line); }
-.faq details p { padding: 0 20px 18px; margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--text-soft); border-top: 1px solid var(--surface-line); padding-top: 14px; }
-@media(max-width:640px){ .faq { padding: 48px 0 56px; } .faq summary { font-size: 15px; padding: 16px 16px; } .faq details p { padding: 0 16px 16px; padding-top: 12px; } }
+/* ===== FAQ в футере, свёрнут в одну строку ===== */
+.footer-faq { border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; padding-bottom: 20px; }
+.footer-faq > details { max-width: 800px; margin: 0 auto; }
+.footer-faq summary::-webkit-details-marker { display: none; }
+.footer-faq > details > summary { list-style: none; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 6px 0; cursor: pointer; user-select: none; }
+.footer-faq > details > summary h2 { font-family: var(--serif); font-size: 24px; letter-spacing: .04em; color: var(--text-on-dark); margin: 0; max-width: none; }
+.footer-faq > details > summary::after { content: "+"; flex-shrink: 0; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); color: var(--gold-light); font-size: 17px; line-height: 1; }
+.footer-faq > details[open] > summary::after { content: "−"; }
+.footer-faq .faq-grid { display: grid; gap: 8px; margin: 18px 0 4px; }
+.footer-faq .faq-grid details { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; overflow: hidden; }
+.footer-faq .faq-grid summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 16px; font-size: 14.5px; font-weight: 600; color: var(--text-on-dark); cursor: pointer; user-select: none; }
+.footer-faq .faq-grid summary::after { content: "+"; flex-shrink: 0; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: var(--gold-light); font-size: 15px; line-height: 1; }
+.footer-faq .faq-grid details[open] > summary::after { content: "−"; }
+.footer-faq .faq-grid p { margin: 0; padding: 12px 16px 14px; border-top: 1px solid rgba(255,255,255,.08); font-size: 13.5px; line-height: 1.6; color: var(--text-on-dark-soft); }
+@media(max-width:640px){ .footer-faq > details > summary h2 { font-size: 21px; } .footer-faq .faq-grid summary { font-size: 14px; padding: 13px 14px; } }
 </style>
 </head>
 <body>
@@ -51,6 +56,7 @@
       <a href="/blog/">Блог</a>
       <a href="/career/">Карьера</a>
       <a href="tel:+77000853233">8 700 085 32 33</a>
+      <span class="lang-switch"><a href="/" lang="ru" hreflang="ru" aria-current="true">RU</a><a href="/en/" lang="en" hreflang="en">EN</a></span>
       <a href="https://wa.me/77000853233" class="nav-cta">Написать на WhatsApp</a>
     </nav>
     <button class="burger" id="burger" aria-label="Меню">
@@ -62,28 +68,97 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
-  <div class="container hero-inner">
+  <div class="container hero-inner hero-inner--center">
     <div class="hero-content">
       <p class="eyebrow" data-reveal>Клининг премиум-класса</p>
       <h1 data-reveal>Премиальная уборка под ключ на честных условиях.<br><em>До 1000 тенге за квадратный метр</em></h1>
-      <div class="hero-sub" data-reveal>
-        <p class="hero-sub-title">В уборку входит:</p>
-        <ul class="hero-list">
-          <li>Мойка окон</li>
-          <li>Чистка ковров и диванов</li>
-          <li>Стирка штор и одежды</li>
-          <li>Развешивание и глажка сухих вещей (до 20 шт.)</li>
-          <li>Чистка бытовой и кухонной техники</li>
-        </ul>
+      <div class="carousel tariff-carousel" data-carousel data-reveal>
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <article class="tariff-card">
+              <h2>Простая уборка</h2>
+              <p class="tariff-price">До 1000 тенге за квадратный метр</p>
+              <p class="hero-sub-title">В уборку входит:</p>
+              <ul class="hero-list">
+                <li>Мойка окон</li>
+                <li>Чистка ковров и диванов</li>
+                <li>Стирка штор и одежды</li>
+                <li>Развешивание и глажка сухих вещей (до 20 шт.)</li>
+                <li>Чистка бытовой и кухонной техники</li>
+              </ul>
+            </article>
+          </div>
+          <div class="carousel-slide">
+            <article class="tariff-card">
+              <h2>Уборка по месячной подписке</h2>
+              <p class="tariff-price">До 2 000 тенге за квадратный метр за целый месяц</p>
+              <p class="hero-sub-title">В уборку входит:</p>
+              <ul class="hero-list">
+                <li>Мойка окон</li>
+                <li>Чистка ковров и диванов</li>
+                <li>Стирка штор и одежды</li>
+                <li>Развешивание и глажка сухих вещей (до 20 шт.)</li>
+                <li>Чистка бытовой и кухонной техники</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <div class="carousel-dots"></div>
       </div>
-            <div class="hero-actions" data-reveal>
-        <a href="https://wa.me/77000853233" class="btn btn-primary">Написать на WhatsApp</a>
-        <a href="tel:+77000853233" class="btn btn-ghost">Позвонить</a>
+      <div class="hero-actions hero-actions--stack" data-reveal>
+        <a href="#booking" class="btn btn-primary">Оставить заявку</a>
+        <a href="https://wa.me/77000853233" class="btn btn-ghost">Написать на WhatsApp</a>
       </div>
     </div>
     <div class="hero-photo" data-reveal>
-      <img src="/assets/team.webp" alt="Команда PURELINE в офисе клиента">
+      <div class="carousel" data-carousel>
+        <button type="button" class="carousel-arrow prev" aria-label="Предыдущее фото">‹</button>
+        <button type="button" class="carousel-arrow next" aria-label="Следующее фото">›</button>
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <picture>
+              <source srcset="/assets/team.webp" type="image/webp">
+              <img src="/assets/team.webp" alt="Команда PURELINE в офисе клиента" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/photo1.webp" alt="Клинеры PURELINE убирают офисный холл" loading="lazy" decoding="async">
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/photo2.webp" alt="Бригада PURELINE с оборудованием для уборки" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="container booking-inner">
+    <div class="booking-heading" data-reveal>
+      <p class="section-eyebrow">Заявка</p>
+      <h2>Оставьте заявку</h2>
+      <p style="color:var(--text-on-dark-soft);line-height:1.6">Перезвоним в течение 30 минут, уточним детали и назовём точную стоимость.</p>
+    </div>
+    <form class="booking-form" id="lead-form" novalidate data-reveal>
+      <div class="form-status" id="lead-status" hidden></div>
+      <div class="form-group">
+        <label for="lead-name">Имя</label>
+        <input type="text" id="lead-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
+      </div>
+      <div class="form-group">
+        <label for="lead-phone">Телефон</label>
+        <input type="tel" id="lead-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+      </div>
+      <div class="form-group">
+        <label for="lead-comment">Комментарий <span class="optional">— необязательно</span></label>
+        <textarea id="lead-comment" name="comment" rows="4" placeholder="Площадь, адрес, пожелания"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="lead-submit"><span class="btn-text">Отправить заявку</span></button>
+      <p class="form-disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+    </form>
   </div>
 </section>
 
@@ -92,23 +167,6 @@
   <div class="container cta-inner" data-reveal>
     <h2>Готовы к безупречному порядку?</h2>
     <a href="https://wa.me/77000853233" class="btn btn-primary">Написать на WhatsApp</a>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container" data-reveal>
-    <p class="section-eyebrow">FAQ</p>
-    <h2>Частые вопросы</h2>
-    <div class="faq-grid">
-      <details data-reveal><summary>Сколько стоит клининг в Астане?</summary><p>Клининг в Астане в Pureline стоит от 1000 ₸ за м² - честная цена без скрытых доплат. Итоговая стоимость зависит от площади, типа уборки и дополнительных услуг вроде химчистки или мойки окон. Для точного расчета напишите нам в WhatsApp - назовем цену за минуту.</p></details>
-      <details data-reveal><summary>Что входит в генеральную уборку квартиры в Астане?</summary><p>Генеральная уборка квартиры в Астане от Pureline включает обеспыливание всех поверхностей, мойку окон изнутри, чистку санузлов и кухни с бытовой техникой, уход за полами и бережную обработку мрамора и паркета. Работаем по чек-листу на 80+ пунктов, используем сертифицированную экохимию и технику Karcher. По запросу добавляем химчистку, стирку штор и глажку до 20 вещей.</p></details>
-      <details data-reveal><summary>Делаете ли химчистку дивана на дому в Астане?</summary><p>Да, делаем выездную химчистку диванов, матрасов и ковров на дому в Астане с экстракторным оборудованием. Используем безопасную гипоаллергенную химию, которая удаляет застарелые пятна и запахи и подходит для детских комнат и домов с питомцами. Мебель высыхает за 4-6 часов и готова к использованию в тот же день.</p></details>
-      <details data-reveal><summary>Моете ли панорамные окна без разводов?</summary><p>Да, профессионально моем панорамные окна, витражи и фасадное остекление в квартирах и домах Астаны без разводов. Работаем на высоких этажах жилых комплексов с безопасным оборудованием и средствами для стекла. Также очищаем рамы, откосы и защитную строительную ленту после ремонта.</p></details>
-      <details data-reveal><summary>Чем премиум клининг отличается от обычной уборки?</summary><p>Премиум клининг - это чек-лист на 60-110 пунктов, сертифицированная экохимия без хлора, HEPA-оборудование и бригадир на объекте для контроля качества. В отличие от обычной уборки, мы даем гарантию 24 часа и договор с сохранностью имущества. Вы платите за предсказуемый результат как в отеле 5 звезд, а не за импровизацию.</p></details>
-      <details data-reveal><summary>В каких ЖК Астаны работаете?</summary><p>Работаем по всей Астане, включая левый берег и элитные комплексы Highvill, BI Village, Караоткель и другие ЖК. Также убираем коттеджи, таунхаусы и частные дома в Есильском районе и пригороде. Выезжаем со своим оборудованием и средствами в день обращения.</p></details>
-      <details data-reveal><summary>Как заказать уборку на сегодня?</summary><p>Чтобы заказать уборку на сегодня в Астане, напишите на WhatsApp 8 700 085 32 33 или позвоните - отвечаем ежедневно с 08:00 до 21:00. Подберем время, уточним площадь и тип уборки, бригада приедет в удобный слот даже в день обращения. Возможна оплата через Kaspi и по безналу с договором для юрлиц.</p></details>
-    </div>
   </div>
 </section>
 
@@ -134,6 +192,20 @@
       <a href="/career/">Карьера</a>
       <a href="/#booking">Бронирование</a>
     </div>
+  </div>
+  <div class="container footer-faq">
+    <details id="faq">
+      <summary><h2>FAQ</h2></summary>
+      <div class="faq-grid">
+      <details><summary>Сколько стоит клининг в Астане?</summary><p>Клининг в Астане в Pureline стоит от 1000 ₸ за м² - честная цена без скрытых доплат. Итоговая стоимость зависит от площади, типа уборки и дополнительных услуг вроде химчистки или мойки окон. Для точного расчета напишите нам в WhatsApp - назовем цену за минуту.</p></details>
+      <details><summary>Что входит в генеральную уборку квартиры в Астане?</summary><p>Генеральная уборка квартиры в Астане от Pureline включает обеспыливание всех поверхностей, мойку окон изнутри, чистку санузлов и кухни с бытовой техникой, уход за полами и бережную обработку мрамора и паркета. Работаем по чек-листу на 80+ пунктов, используем сертифицированную экохимию и технику Karcher. По запросу добавляем химчистку, стирку штор и глажку до 20 вещей.</p></details>
+      <details><summary>Делаете ли химчистку дивана на дому в Астане?</summary><p>Да, делаем выездную химчистку диванов, матрасов и ковров на дому в Астане с экстракторным оборудованием. Используем безопасную гипоаллергенную химию, которая удаляет застарелые пятна и запахи и подходит для детских комнат и домов с питомцами. Мебель высыхает за 4-6 часов и готова к использованию в тот же день.</p></details>
+      <details><summary>Моете ли панорамные окна без разводов?</summary><p>Да, профессионально моем панорамные окна, витражи и фасадное остекление в квартирах и домах Астаны без разводов. Работаем на высоких этажах жилых комплексов с безопасным оборудованием и средствами для стекла. Также очищаем рамы, откосы и защитную строительную ленту после ремонта.</p></details>
+      <details><summary>Чем премиум клининг отличается от обычной уборки?</summary><p>Премиум клининг - это чек-лист на 60-110 пунктов, сертифицированная экохимия без хлора, HEPA-оборудование и бригадир на объекте для контроля качества. В отличие от обычной уборки, мы даем гарантию 24 часа и договор с сохранностью имущества. Вы платите за предсказуемый результат как в отеле 5 звезд, а не за импровизацию.</p></details>
+      <details><summary>В каких ЖК Астаны работаете?</summary><p>Работаем по всей Астане, включая левый берег и элитные комплексы Highvill, BI Village, Караоткель и другие ЖК. Также убираем коттеджи, таунхаусы и частные дома в Есильском районе и пригороде. Выезжаем со своим оборудованием и средствами в день обращения.</p></details>
+      <details><summary>Как заказать уборку на сегодня?</summary><p>Чтобы заказать уборку на сегодня в Астане, напишите на WhatsApp 8 700 085 32 33 или позвоните - отвечаем ежедневно с 08:00 до 21:00. Подберем время, уточним площадь и тип уборки, бригада приедет в удобный слот даже в день обращения. Возможна оплата через Kaspi и по безналу с договором для юрлиц.</p></details>
+      </div>
+    </details>
   </div>
   <div class="container footer-bottom">
     <span>© <span id="year"></span> PURELINE. Все права защищены.</span>
