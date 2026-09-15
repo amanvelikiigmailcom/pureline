@@ -35,6 +35,7 @@
 .blog-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--surface-line);border-radius:18px;overflow:hidden;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
 .blog-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(13,22,19,.10);border-color:#ddd6c3}
 .blog-media{height:180px;display:flex;align-items:flex-end;padding:18px;position:relative}
+.blog-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .blog-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(13,22,19,.55) 100%)}
 .blog-media .blog-tag{position:relative;z-index:1;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:6px 10px;font-weight:700}
 .blog-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
@@ -77,6 +78,7 @@
     <div class="blog-grid">
       <a href="/blog/article-1/" class="blog-card" data-reveal>
         <div class="blog-media" style="background:radial-gradient(ellipse 80% 60% at 70% 20%,rgba(178,138,75,.35),transparent 60%),linear-gradient(135deg,#0d1613 0%,#1e352c 50%,#2a4a3a 100%)">
+          <img src="/assets/blog/article-1.avif" alt="Pureline в Астане: премиальный клининг" loading="lazy" decoding="async">
           <span class="blog-tag">Премиум</span>
         </div>
         <div class="blog-body">
@@ -88,6 +90,7 @@
       </a>
       <a href="/blog/article-2/" class="blog-card" data-reveal>
         <div class="blog-media" style="background:radial-gradient(ellipse 80% 60% at 30% 80%,rgba(100,160,140,.35),transparent 60%),linear-gradient(135deg,#14211c 0%,#1d3a2f 50%,#2e5a45 100%)">
+          <img src="/assets/blog/article-2.avif" alt="5 лайфхаков как сохранить квартиру чистой после генеральной уборки" loading="lazy" decoding="async">
           <span class="blog-tag">Лайфхаки</span>
         </div>
         <div class="blog-body">
@@ -99,6 +102,7 @@
       </a>
       <a href="/blog/article-3/" class="blog-card" data-reveal>
         <div class="blog-media" style="background:radial-gradient(ellipse 80% 60% at 80% 80%,rgba(178,138,75,.30),transparent 60%),linear-gradient(135deg,#1a241f 0%,#2a3d32 50%,#3d5a4a 100%)">
+          <img src="/assets/blog/article-3.avif" alt="Эко-уборка без химии в Астане: безопасно для детей и питомцев" loading="lazy" decoding="async">
           <span class="blog-tag">Эко</span>
         </div>
         <div class="blog-body">
@@ -128,7 +132,7 @@
       <h4>Контакты</h4>
       <a href="tel:+77000853233">8 700 085 32 33</a>
       <a href="mailto:hello@pureline.kz">hello@pureline.kz</a>
-      <p>Ежедневно, 08:00-21:00</p>
+      <p>Ежедневно, с 09:00 до 21:00</p>
     </div>
     <div class="footer-col">
       <h4>Разделы</h4>
