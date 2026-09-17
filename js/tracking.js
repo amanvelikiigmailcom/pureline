@@ -1,44 +1,39 @@
 // Pureline — Google Ads conversion tracking
 // Pixel: AW-18437513193 / Label: 2j43CI-GvfQcEOm_2NdE — "Вацап написали"
-// Only WhatsApp for now — pixel ready for future events
-// Delegated click handler — works for dynamically injected wa.me links
-// Outbound pattern with event_callback + 300ms fallback
+// Native link handling with debounce — opens WhatsApp directly without popup/blocking
 
 const PIXEL_ID = 'AW-18437513193';
 const TRACKING_CONFIG = {
   whatsapp_button: {
     label: '2j43CI-GvfQcEOm_2NdE',
-    selector: 'a[href*="wa.me"]',
-    isOutbound: true
+    selector: 'a[href*="wa.me"]'
   }
 };
+
 document.addEventListener('DOMContentLoaded', () => {
+  let lastClickTime = 0;
+  const DEBOUNCE_MS = 2000;
+
   document.addEventListener('click', (event) => {
     for (let key in TRACKING_CONFIG) {
-      let config = TRACKING_CONFIG[key];
+      const config = TRACKING_CONFIG[key];
       if (!config.selector) continue;
-      let targetElement = event.target.closest(config.selector);
+      const targetElement = event.target.closest(config.selector);
       if (targetElement) {
-        if (!config.isOutbound) {
-          gtag('event', 'conversion', { 'send_to': `${PIXEL_ID}/${config.label}` });
-          console.log(`[Ads] conversion: ${key}`);
-        } else {
-          event.preventDefault();
-          let destinationUrl = targetElement.href;
-          let hasFired = false;
-          const proceedToUrl = () => {
-            if (!hasFired) {
-              hasFired = true;
-              window.location.href = destinationUrl;
-            }
-          };
-          gtag('event', 'conversion', {
-            'send_to': `${PIXEL_ID}/${config.label}`,
-            'event_callback': proceedToUrl
-          });
-          console.log(`[Ads] outbound conversion: ${key}`);
-          setTimeout(proceedToUrl, 300);
+        const now = Date.now();
+        if (now - lastClickTime < DEBOUNCE_MS) {
+          // Игнорируем повторный клик для Google Ads, чтобы не дублировать конверсии
+          return;
         }
+        lastClickTime = now;
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': `${PIXEL_ID}/${config.label}`
+          });
+        }
+        console.log(`[Ads] conversion: ${key}`);
+        // Не вызываем event.preventDefault() — браузер мгновенно открывает нативный WhatsApp на телефоне
       }
     }
   });

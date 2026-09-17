@@ -12,19 +12,27 @@
 <script src="/js/tracking.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="L-Idj06LKDSu-O8qAkji3DPLk4-KTCZyZmEaz-pjRvc">
 <title>PURELINE - премиальный клининг</title>
 <meta name="description" content="Клининговая компания премиум-класса. Генеральная и поддерживающая уборка, уборка после ремонта, химчистка. Онлайн-запись на удобное время.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<style>
+  /* Гарантированная видимость без белого экрана даже при блокировщиках рекламы */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+</style>
 </head>
 <body>
 
 <div class="noise-overlay"></div>
 
-<!-- ADS HEADER - minimal centered logo, no nav -->
-<header class="ads-header" style="padding:18px 16px;text-align:center;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(184,134,44,0.12)">
+<!-- PROMO HEADER - minimal centered logo, no nav -->
+<header class="promo-header" style="padding:18px 16px;text-align:center;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(184,134,44,0.12)">
   <a href="/" class="logo" style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;letter-spacing:0.18em;color:var(--ink);text-decoration:none">PURE<span style="color:var(--gold)">LINE</span></a>
 </header>
 
@@ -33,9 +41,9 @@
   <div class="hero-bg"></div>
   <div class="container hero-inner">
     <div class="hero-content">
-      <p class="eyebrow" data-reveal>Клининг премиум-класса</p>
-      <h1 data-reveal>Премиальная уборка под ключ в Астане<br><em>До 1000 тенге за квадратный метр</em></h1>
-      <div class="hero-sub" data-reveal>
+      <p class="eyebrow">Клининг премиум-класса</p>
+      <h1>Премиальная уборка под ключ в Астане<br><em>До 1000 тенге за квадратный метр</em></h1>
+      <div class="hero-sub">
         <p class="hero-sub-title">В уборку входит:</p>
         <ul class="hero-list">
           <li>Мойка окон</li>
@@ -46,8 +54,12 @@
         </ul>
       </div>
 
+      <!-- Кнопка на первом экране (Hero) для мгновенного перехода в WhatsApp -->
+      <div class="hero-actions" style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
+        <a href="https://wa.me/77000853233" class="btn btn-primary" style="min-width:220px;justify-content:center;font-size:17px;padding:16px 32px;border-radius:999px">Написать нам в WhatsApp</a>
+      </div>
     </div>
-    <div class="hero-photo" data-reveal>
+    <div class="hero-photo">
       <img src="/assets/team.webp" alt="Команда PURELINE в офисе клиента">
     </div>
   </div>
@@ -55,10 +67,10 @@
 
 <!-- BOTTOM CTA - strong close -->
 <section class="cta" style="padding:56px 0 64px;text-align:center;background:var(--ink);color:#fff">
-  <div class="container" data-reveal style="text-align:center;display:flex;flex-direction:column;align-items:center">
+  <div class="container" style="text-align:center;display:flex;flex-direction:column;align-items:center">
     <h2 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,38px);font-weight:600;margin:0 0 10px;color:#fff">Получите бесплатную консультацию</h2>
     <p style="text-align:center;color:rgba(255,255,255,0.72);margin:0 0 24px;max-width:480px;font-family:'Manrope',sans-serif">Напишите нам в WhatsApp - ответим быстро</p>
-    <a href="https://wa.me/77000853233" class="btn btn-primary" style="min-width:220px;justify-content:center;font-size:17px;padding:16px 32px;border-radius:999px">Написать нам</a>
+    <a href="https://wa.me/77000853233" class="btn btn-primary" style="min-width:220px;justify-content:center;font-size:17px;padding:16px 32px;border-radius:999px">Написать нам в WhatsApp</a>
   </div>
 </section>
 
