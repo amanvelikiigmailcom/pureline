@@ -241,6 +241,59 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pureline.kz/#organization",
+      "name": "Pureline",
+      "url": "https://pureline.kz/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pureline.kz/logo.png"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-775-433-22-26",
+        "contactType": "customer service",
+        "areaServed": "KZ",
+        "availableLanguage": ["Russian", "Kazakh"]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://pureline.kz/#localbusiness",
+      "name": "Pureline Cleaning",
+      "url": "https://pureline.kz/",
+      "image": "https://pureline.kz/logo.png",
+      "telephone": "+7-775-433-22-26",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Астана",
+        "addressCountry": "KZ"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pureline.kz/#website",
+      "url": "https://pureline.kz/",
+      "name": "Pureline - Профессиональный клининг в Астане",
+      "publisher": {
+        "@id": "https://pureline.kz/#organization"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
