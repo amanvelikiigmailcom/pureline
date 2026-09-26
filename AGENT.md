@@ -3,8 +3,7 @@
 - Project: Pureline Astana — https://pureline.kz — repo https://github.com/amanvelikiigmailcom/pureline (`main`)
 - Stack: static HTML/CSS/JS — no build, no framework
 - Paths:
-  - primary `/Users/amanyessen/pureline` (git)
-  - source `/Users/amanyessen/NEW/pureline`
+  - primary `/home/myuser/projects/pureline` (git)
 - Structure:
   - `index.html` — Google tag `AW-18437513193` right after `<head>`
   - `cleaning/index.html` — copy, assets via `/css/` `/js/` `/assets/`
@@ -38,14 +37,10 @@
 
 ## Автор и спикер экспертных материалов
 - Имя: Алдияр Садубай (Aldiyar Sadubay)
-- Роль: Основатель и главный технолог Pureline (Founder & Chief Operating Officer)
-- LinkedIn: https://www.linkedin.com/in/aldiyar-sadubay?originalSubdomain=kz
+- Роль: Основатель Pureline (Founder & CEO)
+- LinkedIn: https://www.linkedin.com/in/aldiyar-sadubay/
+- Instagram: https://www.instagram.com/aldiyar_sadubay
+- Компания Instagram: https://www.instagram.com/pureline.kz_cleaning/
+- 2GIS: https://2gis.kz/astana/firm/70000001117761623 (улица Достык, 5/1, ЖК Северное сияние)
 - Описание: Эксперт по технологиям премиального клининга, защите деликатных материалов (мрамор, паркет, глянец) и экобезопасности.
 
-## 🛠️ Интеграция с ИИ-Генератором (Сентябрь 2026)
-Проект теперь полностью связан с генератором AEO & GEO статей (`create_article`). 
-**Что реализовано:**
-1. Автоматический экспорт: сгенерированные статьи напрямую сохраняются в `/blog/<slug>/index.html`.
-2. Картинки: обложки, инфографика и инлайн-изображения (через FLUX/Leonardo) сохраняются в `/images/blog/<slug>/`.
-3. Навигация: скрипты автоматически добавляют новые статьи в `blog/index.html` и обновляют `sitemap.xml`.
-4. Очистка: тестовые прогоны удалены, ветка `main` синхронизирована с GitHub. Сайт готов принимать готовые отвалидированные статьи.

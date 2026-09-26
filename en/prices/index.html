@@ -143,18 +143,236 @@
       <h4>Contact</h4>
       <a href="tel:+77000853233">+7 700 085 32 33</a>
       <a href="mailto:hello@pureline.kz">hello@pureline.kz</a>
+      <a href="https://www.instagram.com/pureline.kz_cleaning" target="_blank" rel="noopener">Instagram: @pureline.kz_cleaning</a>
       <p>Daily, 09:00-21:00</p>
     </div>
     <div class="footer-col">
       <h4>Pages</h4>
       <a href="/en/">Services</a>
-      <a href="/en/prices/">Prices</a>
+      <a href="/en/prices/" class="is-active">Prices</a>
+      <a href="/reviews/">Reviews (4.9 ★)</a>
+      <a href="/authors/">Our Team</a>
       <a href="/en/#booking">Booking</a>
       <a href="/prices/" lang="ru" hreflang="ru">Русская версия</a>
     </div>
   </div>
-  <div class="container footer-bottom"><span>© <span id="year"></span> PURELINE. All rights reserved.</span></div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> PURELINE. All rights reserved.</span>
+    <span style="margin-left: 20px;"><a href="/reviews/" style="color: var(--gold-light); text-decoration: none; border: 1px solid rgba(214,184,119,0.5); padding: 6px 14px; border-radius: 20px; display: inline-block;">Reviews (4.9 ★)</a></span>
+    <span style="margin-left: 10px;"><a href="/authors/" style="color: var(--gold-light); text-decoration: none; border: 1px solid rgba(214,184,119,0.5); padding: 6px 14px; border-radius: 20px; display: inline-block;">Our Authors</a></span>
+  </div>
 </footer>
 <script src="/js/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pureline.kz/#organization",
+      "name": "Pureline",
+      "legalName": "Pureline Cleaning",
+      "url": "https://pureline.kz/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://pureline.kz/#logo",
+        "url": "https://pureline.kz/logo.png"
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://pureline.kz/authors/#aldiyar-sadubay",
+        "name": "Алдияр Садубай",
+        "jobTitle": "Основатель и CEO",
+        "url": "https://pureline.kz/authors/#aldiyar-sadubay",
+        "sameAs": [
+          "https://www.linkedin.com/in/aldiyar-sadubay/",
+          "https://www.instagram.com/aldiyar_sadubay"
+        ]
+      },
+      "sameAs": [
+        "https://2gis.kz/astana/firm/70000001117761623",
+        "https://2gis.kz/astana/geo/70000001117761623",
+        "https://www.instagram.com/pureline.kz_cleaning/",
+        "https://www.linkedin.com/in/aldiyar-sadubay/",
+        "https://www.instagram.com/aldiyar_sadubay"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-700-085-32-33",
+        "contactType": "customer service",
+        "areaServed": "KZ",
+        "availableLanguage": [
+          "Russian",
+          "Kazakh",
+          "English"
+        ]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://pureline.kz/#localbusiness",
+      "name": "Pureline Cleaning",
+      "url": "https://pureline.kz/",
+      "image": "https://pureline.kz/logo.png",
+      "telephone": "+7-700-085-32-33",
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "улица Достык, 5/1, ЖК Северное сияние",
+        "addressLocality": "Астана",
+        "addressCountry": "KZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.128387,
+        "longitude": 71.422025
+      },
+      "hasMap": "https://2gis.kz/astana/geo/70000001117761623",
+      "sameAs": [
+        "https://2gis.kz/astana/firm/70000001117761623",
+        "https://2gis.kz/astana/geo/70000001117761623",
+        "https://www.instagram.com/pureline.kz_cleaning/"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pureline Cleaning Prices in Astana",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Deep cleaning",
+              "description": "Deep cleaning of rooms, bathrooms and kitchens. Washing windows, carpet and sofa extraction cleaning, washing dishes and ironing included."
+            },
+            "price": "1000",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1000",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "m²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Post-renovation and emergency cleaning",
+              "description": "Cleaning after renovation, fire, flooding: removal of construction dust, grout, paint and tape residues."
+            },
+            "price": "1500",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1500",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "m²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly cleaning subscription",
+              "description": "1 deep clean every month + weekly regular maintenance cleaning, bathroom disinfection, dishes and ironing."
+            },
+            "price": "2000",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2000",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "m² per month"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pureline.kz/authors/#aldiyar-sadubay",
+      "name": "Алдияр Садубай",
+      "jobTitle": "Основатель и CEO",
+      "worksFor": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "url": "https://pureline.kz/authors/#aldiyar-sadubay",
+      "sameAs": [
+        "https://www.linkedin.com/in/aldiyar-sadubay/",
+        "https://www.instagram.com/aldiyar_sadubay"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pureline.kz/#website",
+      "url": "https://pureline.kz/",
+      "name": "Pureline - Premium Cleaning in Astana",
+      "publisher": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://pureline.kz/en/prices/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://pureline.kz/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prices",
+          "item": "https://pureline.kz/en/prices/"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pureline.kz/en/prices/#webpage",
+      "url": "https://pureline.kz/en/prices/",
+      "name": "PURELINE - Prices | Premium Cleaning in Astana",
+      "description": "Transparent PURELINE prices in Astana, from 1,000 ₸ per m². Deep cleaning, post-renovation cleaning, upholstery and window cleaning. Exact price after assessment.",
+      "isPartOf": {
+        "@id": "https://pureline.kz/#website"
+      },
+      "about": {
+        "@id": "https://pureline.kz/#localbusiness"
+      },
+      "author": {
+        "@id": "https://pureline.kz/authors/#aldiyar-sadubay"
+      },
+      "breadcrumb": {
+        "@id": "https://pureline.kz/en/prices/#breadcrumb"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 </body>
 </html>

@@ -40,7 +40,404 @@
 .footer-faq .faq-grid summary::after { content: "+"; flex-shrink: 0; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: var(--gold-light); font-size: 15px; line-height: 1; }
 .footer-faq .faq-grid details[open] > summary::after { content: "−"; }
 .footer-faq .faq-grid p { margin: 0; padding: 12px 16px 14px; border-top: 1px solid rgba(255,255,255,.08); font-size: 13.5px; line-height: 1.6; color: var(--text-on-dark-soft); }
-@media(max-width:640px){ .footer-faq > details > summary h2 { font-size: 21px; } .footer-faq .faq-grid summary { font-size: 14px; padding: 13px 14px; } }
+/* ===== Единый темный премиальный стиль всей страницы ===== */
+body {
+  background: #0d1613;
+  color: var(--text-on-dark);
+}
+
+.section-head, .booking-heading {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 48px;
+}
+.section-head .section-eyebrow, .booking-heading .section-eyebrow {
+  display: block !important;
+  text-align: center !important;
+  margin: 0 auto 10px !important;
+  color: var(--gold-light) !important;
+  letter-spacing: 0.22em;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.section-head h2, .booking-heading h2 {
+  font-family: var(--serif) !important;
+  font-size: clamp(32px, 3.8vw, 44px) !important;
+  color: var(--text-on-dark) !important;
+  margin: 8px auto 14px !important;
+  max-width: 760px !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.section-head .section-sub, .booking-heading p {
+  max-width: 660px !important;
+  margin: 0 auto !important;
+  color: var(--text-on-dark-soft) !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+/* 1. Секция Цены — Таблица в темной плашке */
+.section-pricing {
+  padding: 95px 0 85px;
+  background: linear-gradient(180deg, #0d1613 0%, #14211c 55%, #0d1613 100%);
+  color: var(--text-on-dark);
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.section-pricing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(178,138,75,.12), transparent 70%);
+  pointer-events: none;
+}
+.pricing-table-card {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  margin-bottom: 24px;
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.dark-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.dark-pricing-table th {
+  background: rgba(255, 255, 255, 0.035);
+  padding: 18px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+}
+.dark-pricing-table td {
+  padding: 24px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  vertical-align: middle;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-on-dark-soft);
+}
+.dark-pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.dark-pricing-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+.dark-pricing-table tr.is-popular {
+  background: rgba(214, 184, 119, 0.05);
+}
+.dark-pricing-table tr.is-popular td {
+  border-bottom-color: rgba(214, 184, 119, 0.16);
+}
+.card-top-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(214, 184, 119, 0.15);
+  color: var(--gold-light);
+  border: 1px solid rgba(214, 184, 119, 0.3);
+  margin-bottom: 6px;
+}
+.card-top-tag.sub {
+  background: rgba(46, 125, 50, 0.2);
+  color: #81c784;
+  border-color: rgba(46, 125, 50, 0.4);
+}
+.table-tariff-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-on-dark);
+  display: block;
+}
+.table-price-cell {
+  white-space: nowrap;
+}
+.table-price-val {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-style: italic;
+  color: var(--gold-light);
+  display: block;
+  line-height: 1.1;
+}
+.table-price-unit {
+  font-size: 12.5px;
+  color: var(--text-on-dark-soft);
+  display: block;
+  margin-top: 3px;
+}
+.table-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 290px;
+}
+.table-features-list li {
+  padding-left: 22px;
+  position: relative;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text-on-dark-soft);
+}
+.table-features-list li strong {
+  color: var(--text-on-dark);
+}
+.table-features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+.table-for-cell {
+  font-size: 13px;
+  max-width: 210px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+.table-action-cell {
+  white-space: nowrap;
+  text-align: center;
+}
+.table-action-cell .btn-ghost:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  background: rgba(214, 184, 119, 0.12);
+}
+.btn-sm {
+  padding: 11px 22px;
+  font-size: 13.5px;
+  border-radius: 100px;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+}
+.pricing-notice {
+  font-size: 13.5px;
+  color: var(--text-on-dark-soft);
+  text-align: center;
+  max-width: 800px;
+  margin: 24px auto 0;
+  line-height: 1.6;
+}
+
+/* 2. Секция Кому мы НЕ подходим */
+.not-for-section {
+  padding: 95px 0;
+  background: #0d1613;
+  color: var(--text-on-dark);
+  position: relative;
+}
+.not-for-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+@media (max-width: 1024px) {
+  .not-for-grid { grid-template-columns: 1fr; }
+}
+.not-for-card {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.not-for-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e74c3c, var(--gold-light));
+  border-radius: 20px 20px 0 0;
+}
+.not-for-badge {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ff6b6b;
+  margin-bottom: 12px;
+}
+.not-for-card h3 {
+  font-size: 21px;
+  color: var(--text-on-dark);
+  margin-bottom: 14px;
+  line-height: 1.35;
+}
+.not-for-fact {
+  font-size: 14px;
+  color: var(--text-on-dark);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  padding: 12px 16px;
+  background: rgba(231, 76, 60, 0.12);
+  border-radius: 10px;
+  border-left: 3px solid #e74c3c;
+}
+.not-for-card p {
+  font-size: 14px;
+  color: var(--text-on-dark-soft);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.not-for-verdict {
+  margin-top: auto;
+  padding: 18px 20px;
+  background: rgba(214, 184, 119, 0.08);
+  border: 1px dashed rgba(214, 184, 119, 0.45);
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-on-dark);
+}
+.not-for-verdict strong {
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 3. Секция FAQ на главной */
+.section-faq {
+  padding: 95px 0 90px;
+  background: linear-gradient(180deg, #0d1613 0%, #14211c 55%, #0d1613 100%);
+  color: var(--text-on-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.main-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.main-faq-item {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all .25s var(--ease);
+}
+.main-faq-item[open] {
+  border-color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.065);
+}
+.main-faq-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 26px;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  cursor: pointer;
+  user-select: none;
+}
+.main-faq-summary::-webkit-details-marker { display: none; }
+.main-faq-summary::after {
+  content: "+";
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--gold-light);
+  font-size: 18px;
+  font-weight: 400;
+  transition: transform .2s;
+}
+.main-faq-item[open] .main-faq-summary::after {
+  content: "−";
+  background: rgba(214, 184, 119, 0.15);
+  border-color: var(--gold-light);
+}
+.main-faq-content {
+  padding: 0 26px 22px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-on-dark-soft);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+}
+
+/* 4. Секция Бронирования — темная плашка */
+.booking {
+  background: #0d1613 !important;
+  color: var(--text-on-dark) !important;
+  position: relative;
+}
+.booking-form {
+  background: rgba(255, 255, 255, 0.045) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45) !important;
+  color: var(--text-on-dark) !important;
+}
+.booking-form label {
+  color: var(--text-on-dark-soft) !important;
+}
+.booking-form input[type="text"],
+.booking-form input[type="tel"],
+.booking-form input[type="number"],
+.booking-form textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
+}
+.booking-form input[type="text"]:focus,
+.booking-form input[type="tel"]:focus,
+.booking-form input[type="number"]:focus,
+.booking-form textarea:focus {
+  border-color: var(--gold-light) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  outline: none !important;
+}
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+.form-disclaimer {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
 </style>
 </head>
 <body>
@@ -122,7 +519,8 @@
             <article class="tariff-card">
               <h2>Мойка бани / чистка цеха и пр. сложные клининговые работы</h2>
               <p class="tariff-price">Стоимость рассчитывается индивидуально</p>
-              <p class="hero-sub-title">Пожалуйста, позвоните нам по номеру <a href="tel:+77000853233">8 700 085 32 33</a> либо напишите нам на почту <a href="mailto:hello@pureline.kz">hello@pureline.kz</a></p>
+              <p class="hero-sub-title">Пожалуйста, позвоните нам по номеру <a href="tel:+77000853233">8 700 085 32 33</a> либо напишите нам на почту <a href="mailto:hello@pureline.kz">hello@pureline.kz</a>
+      <a href="https://www.instagram.com/pureline.kz_cleaning" target="_blank" rel="noopener">Instagram: @pureline.kz_cleaning</a></p>
             </article>
           </div>
         </div>
@@ -153,6 +551,235 @@
         </div>
         <div class="carousel-dots"></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section class="section-pricing" id="prices">
+  <div class="container" data-reveal>
+    <div class="section-head">
+      <p class="section-eyebrow">Прозрачные тарифы</p>
+      <h2>Стоимость клининга в Астане</h2>
+      <p class="section-sub">Честная фиксированная цена за квадратный метр без скрытых платежей. Все ключевые работы уже включены в тариф.</p>
+    </div>
+
+    <div class="pricing-table-card">
+      <div class="table-responsive">
+        <table class="dark-pricing-table">
+          <thead>
+            <tr>
+              <th>Тариф</th>
+              <th>Цена</th>
+              <th>Что входит в стоимость под ключ</th>
+              <th>Рекомендуем для</th>
+              <th style="text-align:center;">Заказ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="is-popular">
+              <td>
+                <span class="card-top-tag">Хит продаж</span>
+                <span class="table-tariff-name">Генеральная уборка</span>
+              </td>
+              <td class="table-price-cell">
+                <span class="table-price-val">1 000 ₸</span>
+                <span class="table-price-unit">за 1 м² под ключ</span>
+              </td>
+              <td>
+                <ul class="table-features-list">
+                  <li>Мытье окон изнутри и снаружи (при доступе)</li>
+                  <li>Глубокая чистка ковров и диванов экстрактором</li>
+                  <li>Обеспыливание всех поверхностей и влажный уход</li>
+                  <li>Дезинфекция и чистка санузлов, сантехники, плитки</li>
+                  <li>Чистка кухонной плиты, духовки и бытовой техники</li>
+                  <li>Стирка и развешивание штор</li>
+                  <li>Мытье посуды (до 5 кг) и глажка (до 20 вещей)</li>
+                </ul>
+              </td>
+              <td class="table-for-cell">Квартиры и коттеджи для капитального порядка без доплат за каждую отдельную операцию.</td>
+              <td class="table-action-cell">
+                <a href="https://wa.me/77000853233" class="btn btn-ghost btn-sm">WhatsApp</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="card-top-tag">Сложная уборка</span>
+                <span class="table-tariff-name">После ремонта / ЧП</span>
+              </td>
+              <td class="table-price-cell">
+                <span class="table-price-val">от 1 500 ₸</span>
+                <span class="table-price-unit">за 1 м² под ключ</span>
+              </td>
+              <td>
+                <ul class="table-features-list">
+                  <li>Полный объем генеральной уборки под ключ</li>
+                  <li>Удаление строительной пыли промышленными пылесосами</li>
+                  <li>Очистка следов затирки, клея, краски, скотча и шпатлевки</li>
+                  <li>Специализированная химия против строительных загрязнений</li>
+                  <li>Обеспыливание стен, потолочных ниш, радиаторов и розеток</li>
+                </ul>
+              </td>
+              <td class="table-for-cell">Помещения после отделочных работ, капитального ремонта, затопления или переезда.</td>
+              <td class="table-action-cell">
+                <a href="https://wa.me/77000853233" class="btn btn-ghost btn-sm">WhatsApp</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="card-top-tag sub">Выгода до 30%</span>
+                <span class="table-tariff-name">Месячная подписка</span>
+              </td>
+              <td class="table-price-cell">
+                <span class="table-price-val">2 000 ₸</span>
+                <span class="table-price-unit">за 1 м² в месяц</span>
+              </td>
+              <td>
+                <ul class="table-features-list">
+                  <li><strong>1 генеральная уборка</strong> (полный пакет) каждый месяц</li>
+                  <li><strong>Еженедельная</strong> поддерживающая влажная уборка</li>
+                  <li>Еженедельная дезинфекция санузлов и сантехники</li>
+                  <li>Еженедельное мытье посуды (до 5 кг) и глажка (до 20 вещей)</li>
+                  <li>Закрепленная за вашим домом постоянная проверенная бригада</li>
+                </ul>
+              </td>
+              <td class="table-for-cell">Для тех, кто хочет круглый год отельный уровень чистоты и существенно экономит семейный бюджет.</td>
+              <td class="table-action-cell">
+                <a href="https://wa.me/77000853233" class="btn btn-ghost btn-sm">WhatsApp</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="card-top-tag">Спецзаказ</span>
+                <span class="table-tariff-name">Сложные спецобъекты</span>
+              </td>
+              <td class="table-price-cell">
+                <span class="table-price-val">По смене</span>
+                <span class="table-price-unit">индивидуальный расчет</span>
+              </td>
+              <td>
+                <ul class="table-features-list">
+                  <li>Мойка бань, саун, удаление сажи и копоти</li>
+                  <li>Клининг ресторанов, пищевых цехов, коммерческих складов</li>
+                  <li>Уборка офисов по индивидуальному техническому заданию</li>
+                </ul>
+              </td>
+              <td class="table-for-cell">Коммерческая недвижимость, бизнес центры, нестандартные и промышленные площади.</td>
+              <td class="table-action-cell">
+                <a href="https://wa.me/77000853233" class="btn btn-ghost btn-sm">WhatsApp</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="pricing-notice">Точная стоимость фиксируется до начала работ после предварительной консультации или выезда супервайзера. Оплата производится после приемки объекта Заказчиком.</p>
+  </div>
+</section>
+
+<!-- КОМУ МЫ НЕ ПОДХОДИМ -->
+<section class="not-for-section" id="not-for-you">
+  <div class="container" data-reveal>
+    <div class="section-head">
+      <p class="section-eyebrow">Честная позиция</p>
+      <h2>Кому мы точно НЕ подходим</h2>
+      <p class="section-sub">Мы открыто говорим о нашем опыте и реальных случаях из практики. Показываем честные факты, чтобы объяснить, как вы экономите деньги, время и нервы с Pureline.</p>
+    </div>
+
+    <div class="not-for-grid">
+      <div class="not-for-card">
+        <span class="not-for-badge">Честный опыт №1</span>
+        <h3>Тем, кто смотрит только на стартовую цену за метр</h3>
+        <div class="not-for-fact">
+          <strong>Факт из практики:</strong> Наша базовая цена кажется выше рынка — 1 000 ₸ за м² против 500–600 ₸ у частных объявлений.
+        </div>
+        <p>Мы не демпингуем на словах, чтобы навязать платные услуги на объекте. Мы сразу привозим немецкое оборудование Kärcher, сертифицированную экохимию Kiehl и Buzil без едкого хлора и работаем слаженной бригадой под контролем супервайзера.</p>
+        <div class="not-for-verdict">
+          <strong>Как именно вы экономите от 30% до 50%:</strong>
+          В нашу ставку 1 000 ₸/м² уже включены мойка окон с двух сторон, экстракторная химчистка диванов и ковров, стирка и развешивание штор, чистка духового шкафа, мытье посуды и глажка. В дешевых компаниях за каждую опцию требуют доплату (окна от 5 000 ₸, диван от 15 000 ₸), и итоговый чек вырастает до 1 500–1 800 ₸/м². У нас фиксированная цена под ключ без скрытых накруток.
+        </div>
+      </div>
+
+      <div class="not-for-card">
+        <span class="not-for-badge">Честный опыт №2</span>
+        <h3>Тем, кто готов рисковать интерьером без гарантий</h3>
+        <div class="not-for-fact">
+          <strong>Факт из практики:</strong> Когда клинер поцарапал паркет, мы оплатили полировку пола за свой счет. После случая с пропажей мы вернули деньги, внедрили онлайн-камеры и проверку супервайзером.
+        </div>
+        <p>Нанимая случайных клинеров с досок объявлений без договора, заказчик берет все риски на себя. Если клинер сожжет химией смеситель, испортит дорогой паркет или бархатный диван, он просто заблокирует номер, оставив клиента с убытками.</p>
+        <div class="not-for-verdict">
+          <strong>Как именно вы экономите сотни тысяч тенге:</strong>
+          Pureline заключает официальный договор с фиксированной материальной ответственностью за сохранность имущества. Любые непредвиденные ситуации мы закрываем сами и за свой счет. Вы надежно защищены от порчи ремонта и мебели стоимостью в миллионы тенге.
+        </div>
+      </div>
+
+      <div class="not-for-card">
+        <span class="not-for-badge">Честный опыт №3</span>
+        <h3>Тем, кто заказывает клининг редко и запускает квартиру</h3>
+        <div class="not-for-fact">
+          <strong>Факт из практики:</strong> Из-за нерегулярных заказов грязь въедалась в поверхности, портя отделку, а разовый вызов обходился дорого. Чтобы решить проблему, мы создали выгодную подписку.
+        </div>
+        <p>Если вызывать уборку раз в полгода при сильном загрязнении, приходится каждый раз платить за сложную авральную чистку, а водный камень и жир со временем безвозвратно разрушают дорогую плитку и столешницы.</p>
+        <div class="not-for-verdict">
+          <strong>Как именно вы экономите до 30% бюджета в месяц:</strong>
+          По подписке за 2 000 ₸/м² в месяц вы получаете 1 генеральную уборку плюс регулярный еженедельный поддерживающий клининг постоянной бригадой. Это на 30% выгоднее разовых уборок, а постоянный профессиональный уход сохраняет ремонт новым и избавляет от трат на реставрацию.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ НА ГЛАВНОЙ -->
+<section class="section-faq" id="faq">
+  <div class="container" data-reveal>
+    <div class="section-head">
+      <p class="section-eyebrow">Вопросы и ответы</p>
+      <h2>Часто задаваемые вопросы</h2>
+      <p class="section-sub">Ответы на популярные вопросы о ценах, безопасности химии, регламентах и гарантиях Pureline в Астане.</p>
+    </div>
+
+    <div class="main-faq-list">
+      <details class="main-faq-item" open>
+        <summary class="main-faq-summary">Сколько стоит клининг в Астане и почему у вас единая цена?</summary>
+        <div class="main-faq-content">
+          <p>В среднем по Астане базовый тариф клининга составляет около 600 тенге за м². Однако в эту стоимость обычно не входят мойка окон, экстракторная чистка ковров и мягкой мебели, чистка бытовой техники изнутри, стирка штор, мытье посуды и глажка. Мы предлагаем прозрачную систему — 1 000 тенге за м², куда уже включены все перечисленные опции без доплат. Средний чек с аналогичным набором услуг у других компаний начинается от 1 500 тенге за м².</p>
+        </div>
+      </details>
+
+      <details class="main-faq-item">
+        <summary class="main-faq-summary">Что входит в генеральную уборку квартиры под ключ?</summary>
+        <div class="main-faq-content">
+          <p>Генеральная уборка включает: комплексный уход за полами и плинтусами, обеспыливание всех доступных поверхностей, мытье окон изнутри и снаружи (при свободном доступе), дезинфекцию санузлов и сантехники, чистку кухонной плиты и духового шкафа, химчистку диванов и ковров профессиональным экстрактором, стирку и развешивание штор, мытье посуды (до 5 кг) и глажку одежды (до 20 вещей).</p>
+        </div>
+      </details>
+
+      <details class="main-faq-item">
+        <summary class="main-faq-summary">Безопасна ли ваша химия для детей и домашних животных?</summary>
+        <div class="main-faq-content">
+          <p>Да, абсолютно. Мы работаем исключительно с сертифицированной профессиональной химией европейских брендов (Kiehl, Buzil, Pramol). Средства биоразлагаемы, не содержат агрессивного хлора и резких синтетических отдушек, поэтому полностью безопасны для аллергиков, маленьких детей и домашних питомцев.</p>
+        </div>
+      </details>
+
+      <details class="main-faq-item">
+        <summary class="main-faq-summary">Несете ли вы материальную ответственность за сохранность интерьера?</summary>
+        <div class="main-faq-content">
+          <p>Да. Мы заключаем официальный договор с фиксированной материальной ответственностью за сохранность имущества. Наши специалисты обучены работе с деликатными материалами (натуральный мрамор, массив дерева, паркет, дизайнерская фурнитура). На объекте всегда присутствует супервайзер, контролирующий соблюдение технологических карт.</p>
+        </div>
+      </details>
+
+      <details class="main-faq-item">
+        <summary class="main-faq-summary">В каких жилых комплексах и районах Астаны вы работаете?</summary>
+        <div class="main-faq-content">
+          <p>Мы работаем во всех районах Астаны, включая комплексы Highvill, BI Village, Sensata, дипломатический городок, а также частные коттеджи и таунхаусы в Есильском и Нуринском районах. Мобильные бригады выезжают со всем комплектом оборудования и профессиональных расходных материалов.</p>
+        </div>
+      </details>
+
+      <details class="main-faq-item">
+        <summary class="main-faq-summary">Как заказать уборку и какие способы оплаты доступны?</summary>
+        <div class="main-faq-content">
+          <p>Оставить заявку можно через форму на сайте или написав нам в WhatsApp. Менеджер свяжется с вами в течение 30 минут для согласования времени. Оплата осуществляется после завершения работы и личной приемки объекта Заказчиком: принимаем оплату через Kaspi, банковскими картами, а также по безналичному расчету с предоставлением полного пакета закрывающих документов для юридических лиц.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -204,36 +831,27 @@
       <h4>Контакты</h4>
       <a href="tel:+77000853233">8 700 085 32 33</a>
       <a href="mailto:hello@pureline.kz">hello@pureline.kz</a>
+      <a href="https://www.instagram.com/pureline.kz_cleaning" target="_blank" rel="noopener">Instagram: @pureline.kz_cleaning</a>
       <p>Ежедневно, с 09:00 до 21:00</p>
     </div>
     <div class="footer-col">
       <h4>Разделы</h4>
       <a href="/">Услуги</a>
-      <a href="/prices/">Цены</a>
+      <a href="#prices">Цены</a>
+      <a href="/reviews/">Отзывы</a>
+      <a href="#not-for-you">Кому не подходим</a>
+      <a href="#faq">FAQ</a>
       <a href="/portfolio/">Портфолио</a>
       <a href="/blog/">Блог</a>
       <a href="/career/">Карьера</a>
       <a href="/authors/">Наши авторы</a>
-      <a href="/#booking">Бронирование</a>
+      <a href="#booking">Бронирование</a>
     </div>
-  </div>
-  <div class="container footer-faq">
-    <details id="faq">
-      <summary><h2>FAQ</h2></summary>
-      <div class="faq-grid">
-      <details><summary>Сколько стоит клининг в Астане?</summary><p>На рынке Астаны генеральная уборка стоит в среднем 600 тенге за метр. Но в эту цену обычно не входят мойка окон, чистка ковров и диванов с химией и профессиональным оборудованием, стирка и глажка штор, чистка бытовой техники изнутри, мытье посуды и сбор грязного белья. Мы предлагаем честную цену - 1 000 тенге за метр, куда уже входят все эти услуги, за которые в других компаниях просят доплату, и даже больше. Средний чек на такой же объем работ у других компаний по Астане начинается от 1 500 тенге за метр.</p></details>
-      <details><summary>Что входит в генеральную уборку квартиры в Астане?</summary><p>Генеральная уборка квартиры в Астане от Pureline включает: комплексный уход за полами, обеспыливание и влажную уборку всех поверхностей, мытье окон изнутри и снаружи (при свободном доступе), чистку санузлов и бытовой техники, чистку ковров и диванов специальным оборудованием, стирку штор, а также мытье посуды (до 5 кг) и глажку (до 20 вещей).</p></details>
-      <details><summary>Делаете ли химчистку дивана на дому в Астане?</summary><p>Да, делаем выездную химчистку диванов, матрасов и ковров на дому в Астане с экстракторным оборудованием. Используем безопасную гипоаллергенную химию, которая удаляет застарелые пятна и запахи и подходит для детских комнат и домов с питомцами. Мебель высыхает за 4-6 часов и готова к использованию в тот же день.</p></details>
-      <details><summary>Какие еще услуги вы предоставляете?</summary><p>Мы также помогаем с переездом: соберем и упакуем вещи, подготовим квартиру после выезда, уберем и подготовим новую квартиру к заезду, разложим все вещи по местам - и сделаем процесс переезда для вас абсолютно бесшовным. Вы принимаете решение, где хотите жить, а все хлопоты, связанные с этим процессом, берем на себя.</p></details>
-      <details><summary>Чем премиум клининг отличается от обычной уборки?</summary><p>Премиум клининг - это чек-лист на 80 пунктов, сертифицированная экохимия без хлора, HEPA-оборудование и наш менеджер на объекте для контроля качества. В отличие от обычной уборки, мы даем гарантию и договор с сохранностью имущества. Вы платите за предсказуемый результат как в отеле 5 звезд, а не за импровизацию.</p></details>
-      <details><summary>В каких ЖК Астаны работаете?</summary><p>Работаем по всей Астане, включая левый берег и элитные комплексы Highvill, BI Village, Караоткель и другие ЖК. Также убираем коттеджи, таунхаусы и частные дома в Есильском районе и пригороде. Выезжаем со своим оборудованием и средствами в день обращения.</p></details>
-      <details><summary>Как заказать уборку на сегодня?</summary><p>Чтобы заказать уборку на сегодня в Астане, позвоните или напишите нам на WhatsApp - отвечаем ежедневно с 09:00 до 21:00. Подберем время, уточним площадь и тип уборки, бригада приедет в удобный слот даже в день обращения. Возможна оплата через Kaspi и по безналу с договором для юрлиц.</p></details>
-      </div>
-    </details>
   </div>
   <div class="container footer-bottom">
     <span>© <span id="year"></span> PURELINE. Все права защищены.</span>
-    <span style="margin-left: 20px;"><a href="/authors/" style="color: var(--text-soft); text-decoration: underline;">Наши авторы и эксперты</a></span>
+    <span style="margin-left: 20px;"><a href="/reviews/" style="color: var(--gold-light); text-decoration: none; border: 1px solid rgba(214,184,119,0.5); padding: 6px 14px; border-radius: 20px; display: inline-block;">Отзывы клиентов (4.9 ★)</a></span>
+    <span style="margin-left: 10px;"><a href="/authors/" style="color: var(--gold-light); text-decoration: none; border: 1px solid rgba(214,184,119,0.5); padding: 6px 14px; border-radius: 20px; display: inline-block;">Наши авторы и эксперты</a></span>
   </div>
 </footer>
 
@@ -246,17 +864,41 @@
       "@type": "Organization",
       "@id": "https://pureline.kz/#organization",
       "name": "Pureline",
+      "legalName": "Pureline Cleaning",
       "url": "https://pureline.kz/",
       "logo": {
         "@type": "ImageObject",
+        "@id": "https://pureline.kz/#logo",
         "url": "https://pureline.kz/logo.png"
       },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://pureline.kz/authors/#aldiyar-sadubay",
+        "name": "Алдияр Садубай",
+        "jobTitle": "Основатель и CEO",
+        "url": "https://pureline.kz/authors/#aldiyar-sadubay",
+        "sameAs": [
+          "https://www.linkedin.com/in/aldiyar-sadubay/",
+          "https://www.instagram.com/aldiyar_sadubay"
+        ]
+      },
+      "sameAs": [
+        "https://2gis.kz/astana/firm/70000001117761623",
+        "https://2gis.kz/astana/geo/70000001117761623",
+        "https://www.instagram.com/pureline.kz_cleaning/",
+        "https://www.linkedin.com/in/aldiyar-sadubay/",
+        "https://www.instagram.com/aldiyar_sadubay"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+7-775-433-22-26",
+        "telephone": "+7-700-085-32-33",
         "contactType": "customer service",
         "areaServed": "KZ",
-        "availableLanguage": ["Russian", "Kazakh"]
+        "availableLanguage": [
+          "Russian",
+          "Kazakh",
+          "English"
+        ]
       }
     },
     {
@@ -265,92 +907,212 @@
       "name": "Pureline Cleaning",
       "url": "https://pureline.kz/",
       "image": "https://pureline.kz/logo.png",
-      "telephone": "+7-775-433-22-26",
+      "telephone": "+7-700-085-32-33",
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://pureline.kz/#organization"
+      },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "улица Достык, 5/1, ЖК Северное сияние",
         "addressLocality": "Астана",
         "addressCountry": "KZ"
       },
-      "priceRange": "$$",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.128387,
+        "longitude": 71.422025
+      },
+      "hasMap": "https://2gis.kz/astana/geo/70000001117761623",
+      "sameAs": [
+        "https://2gis.kz/astana/firm/70000001117761623",
+        "https://2gis.kz/astana/geo/70000001117761623",
+        "https://www.instagram.com/pureline.kz_cleaning/"
+      ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
         "opens": "09:00",
         "closes": "21:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Прайс-лист клининговых услуг Pureline в Астане",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Генеральная уборка",
+              "description": "Комплексная генеральная уборка в Астане: мойка окон, чистка диванов и ковров экстрактором, дезинфекция санузлов, духовка, стирка штор, мытье посуды (до 5 кг) и глажка (до 20 вещей)."
+            },
+            "price": "1000",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1000",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Уборка после ремонта и ЧП",
+              "description": "Уборка после ремонта, пожара, потопа: удаление строительной пыли промышленными пылесосами, удаление следов затирки, клея, краски и скотча."
+            },
+            "price": "1500",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1500",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Месячная подписка на клининг",
+              "description": "1 генеральная уборка каждый месяц + еженедельная поддерживающая уборка, дезинфекция санузлов, мытье посуды и глажка."
+            },
+            "price": "2000",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2000",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м² в месяц"
+            }
+          }
+        ]
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pureline.kz/authors/#aldiyar-sadubay",
+      "name": "Алдияр Садубай",
+      "jobTitle": "Основатель и CEO",
+      "worksFor": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "url": "https://pureline.kz/authors/#aldiyar-sadubay",
+      "sameAs": [
+        "https://www.linkedin.com/in/aldiyar-sadubay/",
+        "https://www.instagram.com/aldiyar_sadubay"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://pureline.kz/#website",
       "url": "https://pureline.kz/",
-      "name": "Pureline - Профессиональный клининг в Астане",
+      "name": "Pureline - Премиальный клининг в Астане",
       "publisher": {
         "@id": "https://pureline.kz/#organization"
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Сколько стоит клининг в Астане?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "На рынке Астаны генеральная уборка стоит в среднем 600 тенге за метр. Но в эту цену обычно не входят мойка окон, чистка ковров и диванов с химией и профессиональным оборудованием, стирка и глажка штор, чистка бытовой техники изнутри, мытье посуды и сбор грязного белья. Мы предлагаем честную цену - 1 000 тенге за метр, куда уже входят все эти услуги, за которые в других компаниях просят доплату, и даже больше. Средний чек на такой же объем работ у других компаний по Астане начинается от 1 500 тенге за метр."
-      }
+      },
+      "inLanguage": "ru"
     },
     {
-      "@type": "Question",
-      "name": "Что входит в генеральную уборку квартиры в Астане?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Генеральная уборка квартиры в Астане от Pureline включает: комплексный уход за полами, обеспыливание и влажную уборку всех поверхностей, мытье окон изнутри и снаружи (при свободном доступе), чистку санузлов и бытовой техники, чистку ковров и диванов специальным оборудованием, стирку штор, а также мытье посуды (до 5 кг) и глажку (до 20 вещей)."
-      }
+      "@type": "WebPage",
+      "@id": "https://pureline.kz/#webpage",
+      "url": "https://pureline.kz/",
+      "name": "Премиальная уборка квартир и коттеджей под ключ в Астане | PURELINE",
+      "description": "Профессиональный клининг премиум-класса в Астане. Генеральная уборка, после ремонта, мойка окон, химчистка мебели под ключ.",
+      "isPartOf": {
+        "@id": "https://pureline.kz/#website"
+      },
+      "about": {
+        "@id": "https://pureline.kz/#localbusiness"
+      },
+      "breadcrumb": {
+        "@id": "https://pureline.kz/#breadcrumb"
+      },
+      "author": {
+        "@id": "https://pureline.kz/authors/#aldiyar-sadubay"
+      },
+      "inLanguage": "ru"
     },
     {
-      "@type": "Question",
-      "name": "Делаете ли химчистку дивана на дому в Астане?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Да, делаем выездную химчистку диванов, матрасов и ковров на дому в Астане с экстракторным оборудованием. Используем безопасную гипоаллергенную химию, которая удаляет застарелые пятна и запахи и подходит для детских комнат и домов с питомцами. Мебель высыхает за 4-6 часов и готова к использованию в тот же день."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://pureline.kz/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://pureline.kz/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Какие еще услуги вы предоставляете?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Мы также помогаем с переездом: соберем и упакуем вещи, подготовим квартиру после выезда, уберем и подготовим новую квартиру к заезду, разложим все вещи по местам - и сделаем процесс переезда для вас абсолютно бесшовным. Вы принимаете решение, где хотите жить, а все хлопоты, связанные с этим процессом, берем на себя."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Чем премиум клининг отличается от обычной уборки?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Премиум клининг - это чек-лист на 80 пунктов, сертифицированная экохимия без хлора, HEPA-оборудование и наш менеджер на объекте для контроля качества. В отличие от обычной уборки, мы даем гарантию и договор с сохранностью имущества. Вы платите за предсказуемый результат как в отеле 5 звезд, а не за импровизацию."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "В каких ЖК Астаны работаете?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Работаем по всей Астане, включая левый берег и элитные комплексы Highvill, BI Village, Караоткель и другие ЖК. Также убираем коттеджи, таунхаусы и частные дома в Есильском районе и пригороде. Выезжаем со своим оборудованием и средствами в день обращения."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Как заказать уборку на сегодня?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Чтобы заказать уборку на сегодня в Астане, позвоните или напишите нам на WhatsApp - отвечаем ежедневно с 09:00 до 21:00. Подберем время, уточним площадь и тип уборки, бригада приедет в удобный слот даже в день обращения. Возможна оплата через Kaspi и по безналу с договором для юрлиц."
-      }
+      "@type": "FAQPage",
+      "@id": "https://pureline.kz/#faqpage",
+      "isPartOf": {
+        "@id": "https://pureline.kz/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько стоит клининг в Астане и почему у вас единая цена?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В среднем по Астане базовый тариф клининга составляет около 600 тенге за м². Однако в эту стоимость обычно не входят мойка окон, экстракторная чистка ковров и мягкой мебели, чистка бытовой техники изнутри, стирка штор, мытье посуды и глажка. Мы предлагаем прозрачную систему — 1 000 тенге за м², куда уже включены все перечисленные опции без доплат. Средний чек с аналогичным набором услуг у других компаний начинается от 1 500 тенге за м²."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что входит в генеральную уборку квартиры под ключ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Генеральная уборка включает: комплексный уход за полами и плинтусами, обеспыливание всех доступных поверхностей, мытье окон изнутри и снаружи (при свободном доступе), дезинфекцию санузлов и сантехники, чистку кухонной плиты и духового шкафа, химчистку диванов и ковров профессиональным экстрактором, стирку и развешивание штор, мытье посуды (до 5 кг) и глажку одежды (до 20 вещей)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Безопасна ли ваша химия для детей и домашних животных?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, абсолютно. Мы работаем исключительно с сертифицированной профессиональной химией европейских брендов (Kiehl, Buzil, Pramol). Средства биоразлагаемы, не содержат агрессивного хлора и резких синтетических отдушек, поэтому полностью безопасны для аллергиков, маленьких детей и домашних питомцев."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Несете ли вы материальную ответственность за сохранность интерьера?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Мы заключаем официальный договор с фиксированной материальной ответственностью за сохранность имущества. Наши специалисты обучены работе с деликатными материалами (натуральный мрамор, массив дерева, паркет, дизайнерская фурнитура). На объекте всегда присутствует супервайзер, контролирующий соблюдение технологических карт."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "В каких жилых комплексах и районах Астаны вы работаете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы работаем во всех районах Астаны, включая комплексы Highvill, BI Village, Sensata, дипломатический городок, а также частные коттеджи и таунхаусы в Есильском и Нуринском районах. Мобильные бригады выезжают со всем комплектом оборудования и профессиональных расходных материалов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как заказать уборку и какие способы оплаты доступны?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оставить заявку можно через форму на сайте или написав нам в WhatsApp. Менеджер свяжется с вами в течение 30 минут для согласования времени. Оплата осуществляется после завершения работы и личной приемки объекта Заказчиком: принимаем оплату через Kaspi, банковскими картами, а также по безналичному расчету с предоставлением полного пакета закрывающих документов для юридических лиц."
+          }
+        }
+      ]
     }
   ]
 }

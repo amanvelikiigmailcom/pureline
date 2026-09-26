@@ -145,20 +145,240 @@
       <h4>Контакты</h4>
       <a href="tel:+77000853233">8 700 085 32 33</a>
       <a href="mailto:hello@pureline.kz">hello@pureline.kz</a>
+      <a href="https://www.instagram.com/pureline.kz_cleaning" target="_blank" rel="noopener">Instagram: @pureline.kz_cleaning</a>
       <p>Ежедневно, с 09:00 до 21:00</p>
     </div>
     <div class="footer-col">
       <h4>Разделы</h4>
       <a href="/">Услуги</a>
       <a href="/prices/">Цены</a>
+      <a href="/reviews/">Отзывы</a>
       <a href="/portfolio/">Портфолио</a>
       <a href="/blog/">Блог</a>
       <a href="/career/">Карьера</a>
+      <a href="/authors/">Наши авторы</a>
       <a href="/#booking">Бронирование</a>
     </div>
   </div>
-  <div class="container footer-bottom"><span>© <span id="year"></span> PURELINE. Все права защищены.</span></div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> PURELINE. Все права защищены.</span>
+    <span style="margin-left: 20px; display: inline-flex; gap: 10px; flex-wrap: wrap;">
+      <a href="/reviews/" style="color: var(--gold-light); text-decoration: none; border: 1px solid rgba(214,184,119,0.5); padding: 6px 14px; border-radius: 20px; display: inline-block;">Отзывы клиентов (4.9 ★)</a>
+      <a href="/authors/" style="color: var(--gold-light); text-decoration: none; border: 1px solid rgba(214,184,119,0.5); padding: 6px 14px; border-radius: 20px; display: inline-block;">Наши авторы и эксперты</a>
+    </span>
+  </div>
 </footer>
 <script src="/js/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pureline.kz/#organization",
+      "name": "Pureline",
+      "legalName": "Pureline Cleaning",
+      "url": "https://pureline.kz/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://pureline.kz/#logo",
+        "url": "https://pureline.kz/logo.png"
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://pureline.kz/authors/#aldiyar-sadubay",
+        "name": "Алдияр Садубай",
+        "jobTitle": "Основатель и CEO",
+        "url": "https://pureline.kz/authors/#aldiyar-sadubay",
+        "sameAs": [
+          "https://www.linkedin.com/in/aldiyar-sadubay/",
+          "https://www.instagram.com/aldiyar_sadubay"
+        ]
+      },
+      "sameAs": [
+        "https://2gis.kz/astana/firm/70000001117761623",
+        "https://2gis.kz/astana/geo/70000001117761623",
+        "https://www.instagram.com/pureline.kz_cleaning/",
+        "https://www.linkedin.com/in/aldiyar-sadubay/",
+        "https://www.instagram.com/aldiyar_sadubay"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-700-085-32-33",
+        "contactType": "customer service",
+        "areaServed": "KZ",
+        "availableLanguage": [
+          "Russian",
+          "Kazakh",
+          "English"
+        ]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://pureline.kz/#localbusiness",
+      "name": "Pureline Cleaning",
+      "url": "https://pureline.kz/",
+      "image": "https://pureline.kz/logo.png",
+      "telephone": "+7-700-085-32-33",
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "улица Достык, 5/1, ЖК Северное сияние",
+        "addressLocality": "Астана",
+        "addressCountry": "KZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.128387,
+        "longitude": 71.422025
+      },
+      "hasMap": "https://2gis.kz/astana/geo/70000001117761623",
+      "sameAs": [
+        "https://2gis.kz/astana/firm/70000001117761623",
+        "https://2gis.kz/astana/geo/70000001117761623",
+        "https://www.instagram.com/pureline.kz_cleaning/"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Прайс-лист клининговых услуг Pureline в Астане",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Генеральная уборка",
+              "description": "Комплексная генеральная уборка в Астане: мойка окон, чистка диванов и ковров экстрактором, дезинфекция санузлов, духовка, стирка штор, мытье посуды (до 5 кг) и глажка (до 20 вещей)."
+            },
+            "price": "1000",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1000",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Уборка после ремонта и ЧП",
+              "description": "Уборка после ремонта, пожара, потопа: удаление строительной пыли промышленными пылесосами, удаление следов затирки, клея, краски и скотча."
+            },
+            "price": "1500",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1500",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Месячная подписка на клининг",
+              "description": "1 генеральная уборка каждый месяц + еженедельная поддерживающая уборка, дезинфекция санузлов, мытье посуды и глажка."
+            },
+            "price": "2000",
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2000",
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м² в месяц"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pureline.kz/authors/#aldiyar-sadubay",
+      "name": "Алдияр Садубай",
+      "jobTitle": "Основатель и CEO",
+      "worksFor": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "url": "https://pureline.kz/authors/#aldiyar-sadubay",
+      "sameAs": [
+        "https://www.linkedin.com/in/aldiyar-sadubay/",
+        "https://www.instagram.com/aldiyar_sadubay"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pureline.kz/#website",
+      "url": "https://pureline.kz/",
+      "name": "Pureline - Премиальный клининг в Астане",
+      "publisher": {
+        "@id": "https://pureline.kz/#organization"
+      },
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pureline.kz/prices/#webpage",
+      "url": "https://pureline.kz/prices/",
+      "name": "PURELINE - Цены | Премиальный клининг Астана",
+      "description": "Прозрачные цены PURELINE в Астане - от 1000 ₸ за м². Генеральная уборка, после ремонта, химчистка и мойка окон. Точная стоимость после осмотра.",
+      "isPartOf": {
+        "@id": "https://pureline.kz/#website"
+      },
+      "about": {
+        "@id": "https://pureline.kz/#localbusiness"
+      },
+      "breadcrumb": {
+        "@id": "https://pureline.kz/prices/#breadcrumb"
+      },
+      "author": {
+        "@id": "https://pureline.kz/authors/#aldiyar-sadubay"
+      },
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://pureline.kz/prices/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://pureline.kz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Цены",
+          "item": "https://pureline.kz/prices/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </body>
 </html>
