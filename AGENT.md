@@ -11,6 +11,7 @@
 - Run: `python3 -m http.server 8765` → `localhost:8765/` and `/cleaning/`
 - Trakkr: brand `e13f1f8d-b695-4c3f-b984-a12b8ec896cc` — visibility `0.0` — 50 prompts
 - Git: `amanvelikiigmailcom` — push to `main`
+- Deployment: hosting is updated manually by the site owner. Pushing to GitHub does not publish changes to `https://pureline.kz/`. Do not deploy to hosting or assume that a push made the site live. After a push, report the commit and tell the owner that manual hosting deployment remains.
 
 ## Design
 - Fonts: `Cormorant Garamond` 400/500/600/700 (headings h1-h3, logo, serif) + `Manrope` 300-700 (body/UI) via Google Fonts; vars `--serif`/`--sans`/`--ease cubic-bezier(.16,.84,.44,1)`
