@@ -26,7 +26,6 @@ body {
   color: var(--text);
   background: var(--surface);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 .container {
@@ -143,7 +142,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-on-dark) !important;
 }
 .nav-cta:hover { background: var(--gold-light); color: #1c1406 !important; }
-.burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; margin: -10px; position: relative; z-index: 600; }
 .burger span { width: 24px; height: 2px; background: var(--text-on-dark); }
 .lang-switch { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid rgba(255,255,255,.14); border-radius: 100px; }
 .nav .lang-switch a { font-size: 12px; font-weight: 600; letter-spacing: .1em; padding: 5px 10px; border-radius: 100px; line-height: 1; }
@@ -350,11 +349,14 @@ h2 {
   .hero-photo { order: -1; max-width: 480px; flex: 0 1 auto; }
 }
 @media (max-width: 1080px) {
-  .nav { position: fixed; top: 0; right: -100%; width: min(78%, 420px); height: 100vh; background: #0d1613; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px; gap: 26px; transition: right .4s var(--ease); }
-  .nav.is-open { right: 0; }
-  .burger { display: flex; z-index: 600; }
+  .nav { position: fixed; top: 0; right: 0; width: min(88vw, 380px); height: 100vh; height: 100dvh; background: #0d1613; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 80px 28px 32px; gap: 8px; overflow-y: auto; overscroll-behavior: contain; box-shadow: -16px 0 40px rgba(0,0,0,.25); transform: translateX(105%); visibility: hidden; pointer-events: none; transition: transform .4s var(--ease), visibility .4s; }
+  .nav.is-open { transform: translateX(0); visibility: visible; pointer-events: auto; }
+  .nav > a { display: flex; align-items: center; min-height: 44px; }
+  .nav .nav-cta { justify-content: center; text-align: center; margin-top: 8px; }
+  .burger { display: flex; }
 }
 @media (max-width: 720px) {
+  .container { padding-left: 16px; padding-right: 16px; }
   .form-row { grid-template-columns: 1fr; }
   .booking-form { padding: 24px; }
   .footer-inner { grid-template-columns: 1fr; }
@@ -364,6 +366,15 @@ h2 {
   .cta-inner { padding: 48px 24px; }
   .booking-inner { gap: 24px; }
   h2 { margin-bottom: 24px; }
+}
+
+/* Tables in articles scroll within their content column on narrow screens. */
+.article-table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.article-table-scroll > table { min-width: 100%; }
+
+@media (max-width: 720px) {
+  .btn { max-width: 100%; min-width: 0; white-space: normal; overflow-wrap: anywhere; text-align: center; }
+  .article-table-scroll { margin: 16px 0 20px; }
 }
 
 /* ===== Carousel (CSS scroll-snap, без библиотек) ===== */

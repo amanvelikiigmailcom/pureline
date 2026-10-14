@@ -50,8 +50,25 @@ if (header) {
 const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
 if (burger && nav) {
-  burger.addEventListener("click", () => nav.classList.toggle("is-open"));
-  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("is-open")));
+  const setMenuOpen = open => {
+    nav.classList.toggle("is-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? (LANG === "en" ? "Close menu" : "Закрыть меню") : (LANG === "en" ? "Menu" : "Меню"));
+  };
+  burger.addEventListener("click", () => setMenuOpen(!nav.classList.contains("is-open")));
+  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenuOpen(false)));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) {
+      setMenuOpen(false);
+      burger.focus();
+    }
+  });
+  document.addEventListener("click", e => {
+    if (nav.classList.contains("is-open") && !nav.contains(e.target) && !burger.contains(e.target)) setMenuOpen(false);
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1080 && nav.classList.contains("is-open")) setMenuOpen(false);
+  });
 }
 
 // ===== Reveal on scroll =====
