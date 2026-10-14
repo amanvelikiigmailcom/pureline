@@ -21,10 +21,100 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <style>
-  /* Гарантированная видимость без белого экрана даже при блокировщиках рекламы */
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
+  .promo-header {
+    padding: 18px 24px;
+    text-align: center;
+    background: var(--surface);
+    border-bottom: 1px solid var(--surface-line);
+  }
+  .promo-header .logo {
+    color: var(--ink);
+    letter-spacing: .18em;
+  }
+  .promo-header .logo span { color: var(--gold); }
+  .promo-hero { min-height: 0; }
+  .promo-hero .hero-inner {
+    display: block;
+    max-width: 1040px;
+    padding-top: clamp(64px, 8vw, 112px);
+    padding-bottom: clamp(64px, 8vw, 104px);
+  }
+  .promo-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .promo-intro .eyebrow { margin-bottom: 20px; }
+  .promo-hero h1 {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  .promo-hero h1 em {
+    display: block;
+    margin-top: 16px;
+    font-size: .58em;
+    line-height: 1.18;
+  }
+  .promo-intro .btn { margin-top: 36px; }
+  .promo-includes {
+    margin-top: clamp(56px, 7vw, 88px);
+    padding: clamp(28px, 4vw, 48px);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 28px;
+    background: rgba(255,255,255,.055);
+  }
+  .promo-includes h2 {
+    margin-bottom: 28px;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.1;
+  }
+  .promo-includes .hero-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+    row-gap: 20px;
+  }
+  .promo-includes .hero-list li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-on-dark);
+  }
+  .promo-cta {
+    padding: clamp(56px, 7vw, 80px) 0;
+    background: var(--surface-soft);
+    text-align: center;
+  }
+  .promo-cta h2 {
+    margin: 0 0 10px;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .promo-cta p {
+    margin: 0 0 28px;
+    color: var(--text-soft);
+  }
+  .promo-footer {
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--text-soft);
+  }
+  @media (max-width: 720px) {
+    .promo-header { padding: 16px 20px; }
+    .promo-hero .hero-inner { padding: 64px 24px; }
+    .promo-hero h1 { font-size: clamp(38px, 10vw, 52px); }
+    .promo-hero h1 em { font-size: .66em; }
+    .promo-intro .eyebrow { font-size: 11px; line-height: 1.5; }
+    .promo-intro .btn, .promo-cta .btn { width: 100%; max-width: 360px; }
+    .promo-includes { margin-top: 56px; padding: 28px 24px; }
+    .promo-includes h2 { margin-bottom: 24px; }
+    .promo-includes .hero-list { grid-template-columns: 1fr; gap: 18px; }
+    .promo-includes .hero-list li { font-size: 15px; }
   }
 </style>
 </head>
@@ -33,45 +123,43 @@
 <div class="noise-overlay"></div>
 
 <!-- PROMO HEADER - minimal centered logo, no nav -->
-<header class="promo-header" style="padding:18px 16px;text-align:center;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(184,134,44,0.12)">
-  <a href="/" class="logo" style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;letter-spacing:0.18em;color:var(--ink);text-decoration:none">PURE<span style="color:var(--gold)">LINE</span></a>
+<header class="promo-header">
+  <a href="/" class="logo" aria-label="PURELINE — главная">PURE<span>LINE</span></a>
 </header>
 
 <!-- HERO -->
-<section class="hero" id="top">
+<main class="hero promo-hero" id="top">
   <div class="hero-bg"></div>
   <div class="container hero-inner">
-    <div class="hero-content">
+    <div class="promo-intro">
       <p class="eyebrow">Клининг премиум-класса</p>
-      <h1>Премиальная уборка под ключ в Астане<br><em>До 1000 тенге за квадратный метр</em></h1>
-      <div class="hero-sub">
-        <p class="hero-sub-title">В уборку входит:</p>
-        <ul class="hero-list">
-          <li>Мойка окон</li>
-          <li>Чистка ковров и диванов</li>
-          <li>Стирка штор и одежды</li>
-          <li>Развешивание и глажка сухих вещей (до 20 шт.)</li>
-          <li>Чистка бытовой и кухонной техники</li>
-        </ul>
-      </div>
+      <h1>Премиальная уборка под ключ в Астане <em>До 1000 тенге за квадратный метр</em></h1>
+      <a href="https://wa.me/77000853233" class="btn btn-primary">Написать нам в WhatsApp</a>
     </div>
-    <div class="hero-photo">
-      <img src="/assets/team.webp" alt="Команда PURELINE в офисе клиента">
+    <div class="promo-includes">
+      <h2>В уборку входит</h2>
+      <ul class="hero-list">
+        <li>Мойка окон</li>
+        <li>Чистка ковров и диванов</li>
+        <li>Стирка штор и одежды</li>
+        <li>Развешивание и глажка сухих вещей (до 20 шт.)</li>
+        <li>Чистка бытовой и кухонной техники</li>
+      </ul>
     </div>
   </div>
-</section>
+</main>
 
 <!-- BOTTOM CTA - strong close -->
-<section class="cta" style="padding:56px 0 64px;text-align:center;background:var(--ink);color:#fff">
-  <div class="container" style="text-align:center;display:flex;flex-direction:column;align-items:center">
-    <h2 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,38px);font-weight:600;margin:0 0 10px;color:#fff">Получите бесплатную консультацию</h2>
-    <p style="text-align:center;color:rgba(255,255,255,0.72);margin:0 0 24px;max-width:480px;font-family:'Manrope',sans-serif">Напишите нам в WhatsApp - ответим быстро</p>
-    <a href="https://wa.me/77000853233" class="btn btn-primary" style="min-width:220px;justify-content:center;font-size:17px;padding:16px 32px;border-radius:999px">Написать нам в WhatsApp</a>
+<section class="promo-cta">
+  <div class="container">
+    <h2>Получите бесплатную консультацию</h2>
+    <p>Напишите нам в WhatsApp — ответим быстро</p>
+    <a href="https://wa.me/77000853233" class="btn btn-primary">Написать нам в WhatsApp</a>
   </div>
 </section>
 
 <!-- MINIMAL FOOTER - distraction-free -->
-<div style="text-align:center;padding:24px 16px;font-size:13px;color:#5c665f;font-family:'Manrope',sans-serif;letter-spacing:0.04em">PURELINE · Астана · 8 700 085 32 33</div>
+<footer class="promo-footer">PURELINE · Астана · 8 700 085 32 33</footer>
 
 <script src="/js/script.js"></script>
 
