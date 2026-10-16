@@ -13,6 +13,12 @@
 - Git: `amanvelikiigmailcom` — push to `main`
 - Deployment: hosting is updated manually by the site owner. Pushing to GitHub does not publish changes to `https://pureline.kz/`. Do not deploy to hosting or assume that a push made the site live. After a push, report the commit and tell the owner that manual hosting deployment remains.
 
+## CSS и кеш
+- Единственный исходник стилей: `/home/myuser/projects/pureline/css/style.css`. HTML подключает его неизменяемую побайтовую копию `css/style.<хеш>.css`; копию вручную не редактировать.
+- После правки исходника запустить из корня проекта `python3 version_css.py`, затем `python3 version_css.py --check`. Скрипт создаёт файл с хешем содержимого и обновляет ссылки на него во всех HTML-страницах.
+- При ручной публикации сначала загрузить новый `css/style.<хеш>.css`, потом обновлённые HTML. Старые версии CSS оставить для страниц и браузеров с прежними ссылками.
+- Проверить опубликованные страницы на телефоне и компьютере: новый CSS загружается без 404, меню и подвал выглядят правильно. Не полагаться на очистку Cloudflare: она не очищает кеш браузеров.
+
 ## Design
 - Fonts: `Cormorant Garamond` 400/500/600/700 (headings h1-h3, logo, serif) + `Manrope` 300-700 (body/UI) via Google Fonts; vars `--serif`/`--sans`/`--ease cubic-bezier(.16,.84,.44,1)`
 - Colors: `--ink #0d1613`/`--ink-2 #14211c` dark bg, `--surface #fff`/`--soft #f6f4ee`/`--line #e7e2d6`, `--text #1b241f`/`--soft #5c665f`, `--on-dark #f3f1ea`/`#a9b3ac`, `--gold #b28a4b`/`--gold-light #d6b877`
