@@ -353,7 +353,7 @@ h2 {
   .hero-photo { order: -1; max-width: 480px; flex: 0 1 auto; }
 }
 @media (max-width: 1080px) {
-  .nav { position: fixed; top: 0; right: 0; width: min(88vw, 380px); height: 100vh; height: 100dvh; background: #0d1613; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 80px 28px 32px; gap: 8px; overflow-y: auto; overscroll-behavior: contain; box-shadow: -16px 0 40px rgba(0,0,0,.25); transform: translateX(105%); visibility: hidden; pointer-events: none; transition: transform .4s var(--ease), visibility .4s; }
+  .nav { position: fixed; top: 0; right: 0; width: min(88vw, 380px); height: 100vh; height: 100dvh; background: #0d1613; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 56px 28px 32px; gap: 8px; overflow-y: auto; overscroll-behavior: contain; box-shadow: -16px 0 40px rgba(0,0,0,.25); transform: translateX(105%); visibility: hidden; pointer-events: none; transition: transform .4s var(--ease), visibility .4s; }
   .nav.is-open { transform: translateX(0); visibility: visible; pointer-events: auto; }
   .nav > a { display: flex; align-items: center; min-height: 44px; }
   .nav .nav-cta { justify-content: center; text-align: center; margin-top: 8px; }
@@ -362,6 +362,7 @@ h2 {
 @media (max-width: 720px) {
   .container { padding-left: 16px; padding-right: 16px; }
   .footer-bottom-links { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .footer-quick-links { flex-direction: column; align-items: flex-start; }
   .form-row { grid-template-columns: 1fr; }
   .booking-form { padding: 24px; }
   .footer-inner { grid-template-columns: 1fr; }
