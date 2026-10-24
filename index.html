@@ -46,7 +46,7 @@ body {
   color: var(--text-on-dark);
 }
 
-.section-head, .booking-heading {
+.section-head {
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -56,7 +56,7 @@ body {
   justify-content: center !important;
   margin-bottom: 48px;
 }
-.section-head .section-eyebrow, .booking-heading .section-eyebrow {
+.section-head .section-eyebrow {
   display: block !important;
   text-align: center !important;
   margin: 0 auto 10px !important;
@@ -66,7 +66,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
 }
-.section-head h2, .booking-heading h2 {
+.section-head h2 {
   font-family: var(--serif) !important;
   font-size: clamp(32px, 3.8vw, 44px) !important;
   color: var(--text-on-dark) !important;
@@ -75,7 +75,7 @@ body {
   text-align: center !important;
   width: 100% !important;
 }
-.section-head .section-sub, .booking-heading p {
+.section-head .section-sub {
   max-width: 660px !important;
   margin: 0 auto !important;
   color: var(--text-on-dark-soft) !important;
@@ -398,46 +398,6 @@ body {
   padding-top: 16px;
 }
 
-/* 4. Секция Бронирования — темная плашка */
-.booking {
-  background: #0d1613 !important;
-  color: var(--text-on-dark) !important;
-  position: relative;
-}
-.booking-form {
-  background: rgba(255, 255, 255, 0.045) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-radius: 24px !important;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45) !important;
-  color: var(--text-on-dark) !important;
-}
-.booking-form label {
-  color: var(--text-on-dark-soft) !important;
-}
-.booking-form input[type="text"],
-.booking-form input[type="tel"],
-.booking-form input[type="number"],
-.booking-form textarea {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  color: #ffffff !important;
-  border-radius: 14px !important;
-}
-.booking-form input[type="text"]:focus,
-.booking-form input[type="tel"]:focus,
-.booking-form input[type="number"]:focus,
-.booking-form textarea:focus {
-  border-color: var(--gold-light) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  outline: none !important;
-}
-.booking-form input::placeholder,
-.booking-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.35) !important;
-}
-.form-disclaimer {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
 </style>
 </head>
 <body>
@@ -521,8 +481,7 @@ body {
         <div class="carousel-dots"></div>
       </div>
       <div class="hero-actions hero-actions--stack" data-reveal>
-        <a href="#booking" class="btn btn-primary">Оставить заявку</a>
-        <a href="https://wa.me/77000853233" class="btn btn-ghost">Написать на WhatsApp</a>
+        <a href="https://wa.me/77000853233" class="btn btn-primary">Написать на WhatsApp</a>
       </div>
     </div>
     <div class="hero-photo" data-reveal>
@@ -794,43 +753,15 @@ body {
       <details class="main-faq-item">
         <summary class="main-faq-summary">Как заказать уборку и оплатить работу?</summary>
         <div class="main-faq-content">
-          <p>Оставьте заявку на сайте или напишите нам в WhatsApp. После оценки объекта согласуем задачи, срок и стоимость. Оплата производится после приемки результата. Доступны Kaspi, банковская карта и безналичный расчет для юридических лиц.</p>
+          <p>Напишите нам в WhatsApp или позвоните по номеру +7 700 085 32 33. После оценки объекта согласуем задачи, срок и стоимость. Оплата производится после приемки результата. Доступны Kaspi, банковская карта и безналичный расчет для юридических лиц.</p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- BOOKING -->
-<section class="booking" id="booking">
-  <div class="container booking-inner">
-    <div class="booking-heading" data-reveal>
-      <p class="section-eyebrow">Заявка</p>
-      <h2>Оставьте заявку</h2>
-      <p style="color:var(--text-on-dark-soft);line-height:1.6">Перезвоним в течение 30 минут, уточним детали и назовём точную стоимость.</p>
-    </div>
-    <form class="booking-form" id="lead-form" novalidate data-reveal>
-      <div class="form-status" id="lead-status" hidden></div>
-      <div class="form-group">
-        <label for="lead-name">Имя</label>
-        <input type="text" id="lead-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
-      </div>
-      <div class="form-group">
-        <label for="lead-phone">Телефон</label>
-        <input type="tel" id="lead-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
-      </div>
-      <div class="form-group">
-        <label for="lead-comment">Комментарий <span class="optional">— необязательно</span></label>
-        <textarea id="lead-comment" name="comment" rows="4" placeholder="Площадь, адрес, пожелания"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="lead-submit"><span class="btn-text">Отправить заявку</span></button>
-      <p class="form-disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-    </form>
-  </div>
-</section>
-
 <!-- CTA -->
-<section class="cta">
+<section class="cta" id="booking">
   <div class="container cta-inner" data-reveal>
     <h2>Готовы к безупречному порядку?</h2>
     <a href="https://wa.me/77000853233" class="btn btn-primary">Написать на WhatsApp</a>
@@ -862,7 +793,7 @@ body {
       <a href="/blog/">Блог</a>
       <a href="/career/">Карьера</a>
       <a href="/authors/">Наши авторы</a>
-      <a href="#booking">Бронирование</a>
+      <a href="https://wa.me/77000853233">Заказать уборку</a>
     </div>
   </div>
   <div class="container footer-bottom">
@@ -1160,7 +1091,7 @@ body {
           "name": "Как заказать уборку и оплатить работу?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Оставьте заявку на сайте или напишите нам в WhatsApp. После оценки объекта согласуем задачи, срок и стоимость. Оплата производится после приемки результата. Доступны Kaspi, банковская карта и безналичный расчет для юридических лиц."
+            "text": "Напишите нам в WhatsApp или позвоните по номеру +7 700 085 32 33. После оценки объекта согласуем задачи, срок и стоимость. Оплата производится после приемки результата. Доступны Kaspi, банковская карта и безналичный расчет для юридических лиц."
           }
         }
       ]
