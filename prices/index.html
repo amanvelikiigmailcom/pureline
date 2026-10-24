@@ -12,8 +12,8 @@
 <script src="/js/tracking.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PURELINE - Цены | Премиальный клининг Астана</title>
-<meta name="description" content="Прозрачные цены PURELINE в Астане - от 1000 ₸ за м². Генеральная уборка, после ремонта, химчистка и мойка окон. Точная стоимость после осмотра.">
+<title>PURELINE — Цены | Клининг в Астане</title>
+<meta name="description" content="Цены PURELINE в Астане: влажная уборка от 750 ₸ за м², генеральная уборка, уборка после ремонта и месячная подписка. Точная стоимость после оценки объекта.">
 <link rel="alternate" hreflang="ru" href="https://pureline.kz/prices/">
 <link rel="alternate" hreflang="en" href="https://pureline.kz/en/prices/">
 <link rel="alternate" hreflang="x-default" href="https://pureline.kz/prices/">
@@ -29,8 +29,9 @@
 .page-hero h1{font-size:clamp(32px,4.4vw,54px);line-height:1.15;margin-bottom:16px}
 .page-hero .lead{color:var(--text-on-dark-soft);font-size:17px;line-height:1.65;max-width:560px}
 .prices-section{background:var(--surface-soft);padding:72px 0 88px}
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
-.price-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:14px;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.price-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px;margin-top:36px}
+.price-card{grid-column:span 2;min-width:0;background:var(--surface);border:1px solid var(--surface-line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:14px;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.price-card:nth-last-child(-n+2){grid-column:span 3}
 .price-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(13,22,19,.08)}
 .price-card .pc-top{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
 .price-card h3{font-size:22px;line-height:1.2;color:var(--ink)}
@@ -42,8 +43,8 @@
 .pc-note{margin-top:26px;background:var(--surface);border:1px dashed var(--surface-line);border-radius:14px;padding:18px 22px;font-size:14px;line-height:1.6;color:var(--text-soft);text-align:center}
 .pc-note strong{color:var(--text)}
 .pc-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-@media(max-width:980px){.price-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.price-grid{grid-template-columns:1fr}.page-hero{padding-top:112px}}
+@media(max-width:980px){.price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.price-card,.price-card:nth-last-child(-n+2){grid-column:auto}.price-card:last-child{grid-column:1 / -1}}
+@media(max-width:640px){.price-grid{grid-template-columns:minmax(0,1fr)}.price-card{padding:24px 22px}.page-hero{padding-top:112px}}
 </style>
 </head>
 <body>
@@ -82,6 +83,16 @@
   <div class="container" data-reveal>
     <p class="section-eyebrow">Прайс-лист</p>
     <div class="price-grid">
+      <div class="price-card">
+        <div class="pc-top">Поддержание чистоты</div>
+        <h3>Влажная уборка</h3>
+        <div class="pc-price">от 750 <span>₸ / м²</span></div>
+        <ul>
+          <li>Влажный уход за полами</li>
+          <li>Протирка доступных поверхностей</li>
+          <li>Точный состав работ согласовываем перед уборкой</li>
+        </ul>
+      </div>
       <div class="price-card">
         <div class="pc-top">Хит</div>
         <h3>Генеральная уборка</h3>
@@ -140,7 +151,7 @@
   <div class="container footer-inner">
     <div>
       <a href="/" class="logo">PURE<span>LINE</span></a>
-      <p>Клининг премиум-класса для дома и бизнеса.</p>
+      <p>Клининг в Астане для дома и бизнеса.</p>
     </div>
     <div class="footer-col">
       <h4>Контакты</h4>
@@ -262,6 +273,22 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "name": "Влажная уборка",
+              "description": "Влажный уход за полами и протирка доступных поверхностей. Точный состав работ согласовываем перед уборкой."
+            },
+            "priceCurrency": "KZT",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "minPrice": 750,
+              "priceCurrency": "KZT",
+              "unitCode": "MTK",
+              "unitText": "м²"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
               "name": "Генеральная уборка",
               "description": "Комплексная генеральная уборка в Астане: уход за полами, мойка окон, чистка диванов и ковров экстрактором, дезинфекция санузлов и чистка кухни."
             },
@@ -329,7 +356,7 @@
       "@type": "WebSite",
       "@id": "https://pureline.kz/#website",
       "url": "https://pureline.kz/",
-      "name": "Pureline - Премиальный клининг в Астане",
+      "name": "Pureline — клининг в Астане",
       "publisher": {
         "@id": "https://pureline.kz/#organization"
       },
@@ -339,8 +366,8 @@
       "@type": "WebPage",
       "@id": "https://pureline.kz/prices/#webpage",
       "url": "https://pureline.kz/prices/",
-      "name": "PURELINE - Цены | Премиальный клининг Астана",
-      "description": "Прозрачные цены PURELINE в Астане - от 1000 ₸ за м². Генеральная уборка, после ремонта, химчистка и мойка окон. Точная стоимость после осмотра.",
+      "name": "PURELINE — Цены | Клининг в Астане",
+      "description": "Цены PURELINE в Астане: влажная уборка от 750 ₸ за м², генеральная уборка, уборка после ремонта и месячная подписка. Точная стоимость после оценки объекта.",
       "isPartOf": {
         "@id": "https://pureline.kz/#website"
       },
