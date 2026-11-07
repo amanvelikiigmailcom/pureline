@@ -181,6 +181,14 @@ img { max-width: 100%; display: block; }
   gap: 64px;
 }
 .hero-content { flex: 1 1 480px; min-width: 0; }
+
+/* Главная без фотографии: одна колонка без пустого места под изображение. */
+.hero--text-only { min-height: 0; }
+.hero--text-only .hero-inner { justify-content: center; }
+.hero--text-only .hero-content { flex: 0 1 auto; width: 100%; max-width: 760px; }
+.hero--text-only h1 { max-width: none; }
+.hero--text-only .tariff-carousel { max-width: none; }
+
 .hero-photo { flex: 1 1 440px; min-width: 0; }
 .hero-photo img {
   width: 100%;
